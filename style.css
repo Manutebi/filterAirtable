@@ -99,6 +99,9 @@ body {
 .form-control-sm
 {
     margin-left: 50px;
+    display: flex;
+    flex-wrap: wrap;
+        
 }
 .botones
 {
@@ -146,6 +149,16 @@ body {
         justify-content: center;
         align-items: center;
         font-size: 0.6rem;
+    }
+
+    #filtroContainer
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        
+
     }
     
 

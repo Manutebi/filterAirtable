@@ -11,20 +11,65 @@ body {
 
 }
 
-p
+
+.title p
 {
+    margin-top: 20px;
     font-size: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    
 }
 
 .nav_menu
 {
     display: grid;
     grid-template-columns: 1fr 1fr ;
-    justify-items: end;
     align-items: center;
     margin-right: 40px ;
     
 }
+
+.title p
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav_menu .logo
+{
+    display: flex;
+    justify-content: end;
+    transition: transform 0.2s ease-in-out;
+
+
+}
+
+img:hover {
+    transform: scale(1.1); /* Escala la imagen al 110% en el hover */
+    animation: pulsacion 1s infinite; /* Inicia la animación de pulsación */
+    
+}
+
+@keyframes pulsacion {
+    0% {
+        transform: scale(1);
+
+    }
+    50% {
+        transform: scale(1.1);
+
+    }
+    100% {
+        transform: scale(1);
+
+    }
+}
+
+
+
+
 
 /* h3 {
     font-size: 1.5em;
@@ -116,6 +161,8 @@ body {
     margin-left: 50px;
     display: flex;
     flex-wrap: wrap;
+    column-gap: 5px;
+    row-gap: 5px;
         
 }
 .botones
@@ -129,16 +176,23 @@ body {
         font-size: 0.6rem;
     }
 
+    
     .nav_menu
     {
         display: grid;
         grid-template-columns: 1fr 1fr ;
-        justify-items: center;
-        align-items: center;
-        
-        
-        
+        /* justify-items: center;
+        align-items: center; */
     }
+
+    .title p
+    {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    font-size: .7rem;
+    }
+
 
     /* h3
     {
@@ -147,7 +201,7 @@ body {
 
     #logoimage
     {
-        width: 100px;
+        width: 70px;
     }
 
     .botones
@@ -156,7 +210,7 @@ body {
         justify-content: center;
         align-items: center;
         margin: 10px;
-        /* flex-wrap: wrap; */
+        flex-wrap: wrap;
     }
 
     .form-control-sm

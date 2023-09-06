@@ -9,8 +9,12 @@
 <body>
     <header> 
         <nav class="nav_menu">
-            <p>Gestor de tareas</p>
-            <img id="logoImage" src="https://res.cloudinary.com/dvikvg6ml/image/upload/v1693860781/Benergy_logo_bueno_t2wwiw.png" width="80px" alt="">
+            <div id="title" class="title">
+                <p></p>
+            </div>
+            <div class="logo">
+                <img id="logoImage" src="https://res.cloudinary.com/dvikvg6ml/image/upload/v1693860781/Benergy_logo_bueno_t2wwiw.png" width="80px" alt="">
+            </div>
         </nav>
     </header>
     <main>
@@ -19,8 +23,7 @@
                 <!-- lista de los campos -->
                 <div class="form-control-sm">
                     <select class="" name="filterFieldName" id="filterFieldName">
-                        <option value="" disabled selected>Nombre del campo</option>
-                        
+                        <option value="" disabled selected>Nombre del campo</option>                        
                     </select>
     
                     <select name="filterType" id="filterType">
@@ -39,42 +42,32 @@
                     <div id="filtroContainer">
 
                     </div>
-
-                    
                 </div>
                 <div class="botones" >
                     <button type="button" onclick="agregarFiltro()">Agregar filtro</button>
                     <button type="button" onclick="aplicarFiltros()">Aplicar filtro</button>
                     <button type="button"onclick="recargarIframe()">Actualizar</button>
                     <button type="button" onclick="limpiarFiltros()">Limpiar filtros</button>
+                    <button type="button" onclick="mostrarFiltros()">Mostrar filtros</button>
                 </div>
             </nav>
             <!-- Aqui se define URL base -->
             <iframe id="myIframe" class="airtable-embed" src="" frameborder="0" onmousewheel="" width="100%" height="90%" style= "background: transparent; border: 1px solid #ccc;"></iframe>
         </section>
     </main>
-    <script src="apiLogo.js"></script>
 
 </body>
 <script>
     const urlParams = new URLSearchParams(window.location.search);
     const select = document.getElementById('filterFieldName');
     const newBaseUrl = urlParams.get('baseUrl');
- 
-    // Verificar si newBaseUrl tiene un valor y asignar la URL del iframe
+
     if (newBaseUrl) {
         const iframe = document.getElementById("myIframe");
         iframe.src = newBaseUrl;
     }
 
-    // Obtener los valores de los parámetros c1, c2, c3, c4, c5
-    const c1 = urlParams.get('c1');
-    const c2 = urlParams.get('c2');
-    const c3 = urlParams.get('c3');
-    const c4 = urlParams.get('c4');
-    const c5 = urlParams.get('c5');
-
-    // Funcion para agregar una opcion al select
+    // Definir una función para agregar una opción al select
     function agregarOpcion(valor) {
         const option = document.createElement('option');
         option.value = valor;
@@ -82,50 +75,49 @@
         select.appendChild(option);
     }
 
-    // Verificar si cada variable tiene valor y agregar opciones
-    if (c1) {
-        agregarOpcion(c1);
+    // Obtener y agregar opciones para los 30 parámetros (c1, c2, ..., c30)
+    for (let i = 1; i <= 30; i++) {
+        const paramName = 'c' + i;
+        const paramValue = urlParams.get(paramName);
+        if (paramValue) {
+            agregarOpcion(paramValue);
+        }
     }
-    if (c2) {
-        agregarOpcion(c2);
+
+
+    //Obtener los parametros por URL Logo y titulo
+    const logo = urlParams.get('logo');
+    const logoImage = document.getElementById('logoImage');
+    logoImage.src = logo;
+
+    if (logo){
+        logoImage.src = logo;
+    }else{
+        logoImage.src = 'https://res.cloudinary.com/dvikvg6ml/image/upload/v1693860781/Benergy_logo_bueno_t2wwiw.png'
     }
-    if (c3) {
-        agregarOpcion(c3);
-    }
-    if (c4) {
-        agregarOpcion(c4);
-    }
-    if (c5) {
-        agregarOpcion(c5);
-    }
+
+
+
+    
+    const paragraph = urlParams.get('parrafo');
+    const title = document.getElementById('title');
+    title.innerHTML = paragraph;
+
+    //////////////////////////////////////////////
 
     // Variable global para almacenar las condiciones
     const condiciones = [];
 
     // Funcion para agregar un filtro a la lista de filtros
     function agregarFiltro() {
-        const campo = document.getElementById("filterFieldName").value;
-        const valor = document.getElementById("filterValue").value;
-        const tipoDeFiltro = document.getElementById("filterType").value;
+    const campo = document.getElementById("filterFieldName").value;
+    const valor = document.getElementById("filterValue").value;
+    const tipoDeFiltro = document.getElementById("filterType").value;
 
         // Verifica si se han seleccionado valores válidos
         if (campo && tipoDeFiltro && valor) {
             // Agrega la condicion actual al array de condiciones
             condiciones.push({ campo, tipoDeFiltro, valor });
-
-            // Crea los elemtentos para mostrar el filtro agregado
-            const filtroContainer = document.getElementById("filtroContainer");
-            const filtroElement = document.createElement("div");
-            filtroElement.innerHTML = `
-                <select>
-                    <option value="${campo}" selected>${campo}</option>
-                </select>
-                <select>
-                    <option value="${tipoDeFiltro}" selected>${tipoDeFiltro}</option>
-                </select>
-                <input type="text" value="${valor}">
-            `;
-            filtroContainer.appendChild(filtroElement);
 
             // Limpia los campos de entrada
             document.getElementById("filterFieldName").value = "";
@@ -136,6 +128,52 @@
             alert("Por favor, complete todos los campos para agregar un filtro.");
         }
     }
+
+    function mostrarFiltros() {
+    // Crea la ventana emergente
+    const ventanaEmergente = window.open("", "Filtros Agregados", "width=400,height=400");
+
+    // Agrega los filtros a la ventana emergente
+    let contenido = "<h2>Filtros Agregados:</h2>";
+    for (let i = 0; i < condiciones.length; i++) {
+        const condicion = condiciones[i];
+        contenido += `<p>${condicion.campo} ${condicion.tipoDeFiltro} ${condicion.valor} <button onclick="eliminarFiltro(${i})">Eliminar</button></p>`;
+    }
+
+        // Define la funcion eliminarFiltro en la ventana emergente
+        ventanaEmergente.document.body.innerHTML = contenido;
+        ventanaEmergente.eliminarFiltro = function(index) {
+            // Elimina el filtro seleccionado del array de condiciones
+            condiciones.splice(index, 1);
+
+            // Actualiza la vista de la página para reflejar los cambios
+            const filtroContainer = document.getElementById("filtroContainer");
+            filtroContainer.innerHTML = "";
+
+            // Aplica los filtros restantes
+            aplicarFiltros();
+
+            // Actualiza la ventana emergente para reflejar los cambios
+            mostrarFiltros();
+        };
+    } 
+
+
+
+    // function mostrarFiltros() {
+    //     // Crea la ventana emergente
+    //     const ventanaEmergente = window.open("", "Filtros Agregados", "width=400,height=400");
+
+    //     // Agrega los filtros a la ventana emergente
+    //     let contenido = "<h2>Filtros Agregados:</h2>";
+    //     for (let i = 0; i < condiciones.length; i++) {
+    //         const condicion = condiciones[i];
+    //         contenido += `<p>${condicion.campo} ${condicion.tipoDeFiltro} ${condicion.valor}</p>`;
+    //     }
+    //     ventanaEmergente.document.body.innerHTML = contenido;
+    // }
+
+
 
     // Función para aplicar los filtros
     function aplicarFiltros() {
@@ -177,13 +215,13 @@
         document.getElementById("filterType").value = "";
     }
 
+    //Recarga el Iframe po locoo
+
     function recargarIframe(){
         const iframe = document.getElementById("myIframe");
         iframe.src = newBaseUrl; 
     }
 
 
-
-    
 </script>
 </html>

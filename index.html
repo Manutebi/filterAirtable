@@ -48,7 +48,7 @@
                     <button type="button" id="botonAplicar" onclick="aplicarFiltros()" disabled>Aplicar filtro</button>
                     <button type="button"onclick="recargarIframe()">Actualizar</button>
                     <button type="button" onclick="limpiarFiltros()">Limpiar filtros</button>
-                    <button id="botonMostrarFiltros" type="button" onclick="mostrarFiltros()">Mostrar filtros</button>
+                    <button id="botonMostrarFiltros" type="button" onclick="mostrarFiltros()">Filtros</button>
 
                     <!-- <button class="filter-button" id="filterButton">
                         <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
@@ -220,7 +220,7 @@
 
     function actualizarContadorFiltros() {
         const botonMostrarFiltros = document.getElementById("botonMostrarFiltros");
-        botonMostrarFiltros.textContent = `Mostrar Filtros (${condiciones.length})`;
+        botonMostrarFiltros.textContent = `Filtros (${condiciones.length})`;
     }
 
     function limpiarFiltros() {

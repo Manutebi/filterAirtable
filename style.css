@@ -68,6 +68,72 @@ img:hover {
 }
 
 
+/* //////////////////////////// */
+/* Estilos para el botón */
+.filter-button {
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+/* Estilos para el icono SVG */
+.svg-icon {
+    width: 100%;
+    height: 100%;
+    fill: #007BFF; /* Color inicial del icono */
+    transition: fill 0.3s ease-in-out; /* Transición de animación */
+}
+
+/* Cambiar el color del icono al pasar el ratón sobre el botón */
+.filter-button:hover .svg-icon {
+    fill: #FF5733; 
+}
+
+/* Estilos para el pop-up */
+.popup {
+    
+    opacity: 0; /* El pop-up estará inicialmente oculto */
+    pointer-events: none; /* No se puede hacer clic en elementos detrás del pop-up */
+    transition: opacity 0.3s ease-in-out; /* Transición de animación */
+    position: absolute;
+    top: 60px; /* Alineado debajo del botón */
+    left: 10px;
+    background-color: #fff;
+    /* background: linear-gradient(to top, lightgrey 0%, lightgrey 1%, #e0e0e0 26%, #efefef 48%, #d9d9d9 75%, #bcbcbc 100%); */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    border-radius: 15px;
+
+
+}
+
+.popup p
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    
+    
+} 
+
+.popup p button
+{
+    justify-content: end;
+    width: 80px;
+    margin-left: 30px;
+    background-color: rgb(255, 166, 0);
+}
+
+/* Clase para mostrar el pop-up */
+.show-popup {
+    opacity: 1;
+    pointer-events: auto; /* Permite hacer clic en elementos detrás del pop-up */
+    
+}
+
+
 
 
 
@@ -102,10 +168,39 @@ button {
     font-weight: bold;
 }
 
-button:hover {
+/* .botones #botonAplicar
+{
+    display: none;
+} */
+
+button:hover:not(:disabled) {
     background-color: rgb(255, 166, 0);
     transition: 1s;
     color: white;
+    cursor: pointer;
+}
+
+button:disabled
+{
+    cursor: default;
+}
+
+/* button:hover:not(:disabled) {
+    background-color: rgb(255, 166, 0);
+    transition: 1s;
+    color: white;
+} */
+
+
+.popup button
+{
+    background-color: #fff;
+}
+
+.popup button:hover
+{
+    background-color: #FF5733;
+    border: solid 1px #fff;
 }
 
 body {
@@ -185,6 +280,12 @@ body {
         align-items: center; */
     }
 
+    .nav_menu .title p
+    {
+        margin-left: 20px;
+        white-space: nowrap;      
+    }
+
     .title p
     {
     display: flex;
@@ -212,14 +313,26 @@ body {
         margin: 10px;
         flex-wrap: wrap;
     }
+    
+    .botones button
+    {
+        width: 90px;
+    }
+
 
     .form-control-sm
     {
         display: flex;
-        margin: 10px;
+        margin: 0;
         justify-content: center;
         align-items: center;
         font-size: 0.6rem;
+    }
+
+    #myiframe
+    {
+        width: 100%;
+        height: 84%;
     }
 
     #filtroContainer
@@ -231,6 +344,8 @@ body {
         
 
     }
+
+    
     
 
     
@@ -241,9 +356,12 @@ body {
     body
     {
         font-size: 0.6rem;
+        height: 84%;
     }
     
 
 }
+
+
 
 

@@ -45,14 +45,25 @@
                 </div>
                 <div class="botones" >
                     <button type="button" onclick="agregarFiltro()">Agregar filtro</button>
-                    <button type="button" onclick="aplicarFiltros()">Aplicar filtro</button>
+                    <button type="button" id="botonAplicar" onclick="aplicarFiltros()" disabled>Aplicar filtro</button>
                     <button type="button"onclick="recargarIframe()">Actualizar</button>
                     <button type="button" onclick="limpiarFiltros()">Limpiar filtros</button>
-                    <button type="button" onclick="mostrarFiltros()">Mostrar filtros</button>
+                    <button id="botonMostrarFiltros" type="button" onclick="mostrarFiltros()">Mostrar filtros</button>
+
+                    <!-- <button class="filter-button" id="filterButton">
+                        <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+                            <path d="m509.796 326.874c-44.857-87.465-142.483-166.874-253.796-166.874-112.094 0-209.436 80.377-253.796 166.874-2.938 5.729-2.938 12.523 0 18.253 44.857 87.464 142.483 166.873 253.796 166.873 126.04 0 218.947-98.922 253.796-166.874 2.938-5.729 2.938-12.523 0-18.252zm-253.796 145.126c-90.776 0-166.974-60.307-212.956-136 45.473-74.855 121.428-136 212.956-136 91.137 0 167.232 60.735 212.956 136-46.194 76.038-122.697 136-212.956 136zm-249.697-360.828c7.39-8.209 20.037-8.871 28.246-1.48l44.544 40.107c8.208 7.392 8.871 20.037 1.48 28.246-7.391 8.21-20.038 8.87-28.246 1.48l-44.544-40.108c-8.208-7.39-8.871-20.036-1.48-28.245zm229.697-11.172v-80c0-11.045 8.954-20 20-20s20 8.955 20 20v80c0 11.045-8.954 20-20 20s-20-8.955-20-20zm-126.8-44.545c-4.493-10.091.045-21.913 10.136-26.406 10.092-4.493 21.913.045 26.406 10.136l30.587 68.7c4.493 10.09-.045 21.913-10.136 26.406-10.062 4.479-21.898-.014-26.406-10.136zm322.227 122.59c-7.391-8.208-6.729-20.854 1.48-28.246l44.544-40.107c8.208-7.391 20.855-6.729 28.246 1.48 7.391 8.208 6.729 20.854-1.48 28.245l-44.544 40.108c-8.211 7.392-20.856 6.727-28.246-1.48zm-95.757-70.16 30.587-68.7c4.493-10.091 16.315-14.629 26.406-10.136s14.629 16.315 10.136 26.406l-30.587 68.699c-4.513 10.137-16.36 14.609-26.406 10.137-10.09-4.493-14.628-16.315-10.136-26.406zm-79.67 129.865c-54.175 0-98.25 44.075-98.25 98.25s44.075 98.25 98.25 98.25 98.25-44.075 98.25-98.25-44.075-98.25-98.25-98.25zm0 156.5c-32.119 0-58.25-26.131-58.25-58.25s26.131-58.25 58.25-58.25 58.25 26.131 58.25 58.25-26.131 58.25-58.25 58.25z"/>
+                        </svg>
+                    </button> -->
+                </div>
+
+                <!-- Pop-up -->
+                <div class="popup" id="popup">
+                    
                 </div>
             </nav>
             <!-- Aqui se define URL base -->
-            <iframe id="myIframe" class="airtable-embed" src="" frameborder="0" onmousewheel="" width="100%" height="90%" style= "background: transparent; border: 1px solid #ccc;"></iframe>
+            <iframe id="myIframe" class="airtable-embed" src="" frameborder="0" onmousewheel="" width="100%" height="88%" style= "background: transparent; border: 1px solid #ccc;"></iframe>
         </section>
     </main>
 
@@ -105,122 +116,154 @@
 
     //////////////////////////////////////////////
 
-    // Variable global para almacenar las condiciones
     const condiciones = [];
 
-    // Funcion para agregar un filtro a la lista de filtros
     function agregarFiltro() {
     const campo = document.getElementById("filterFieldName").value;
     const valor = document.getElementById("filterValue").value;
     const tipoDeFiltro = document.getElementById("filterType").value;
 
-        // Verifica si se han seleccionado valores válidos
-        if (campo && tipoDeFiltro && valor) {
-            // Agrega la condicion actual al array de condiciones
-            condiciones.push({ campo, tipoDeFiltro, valor });
+    if (campo && tipoDeFiltro && valor) {
+        condiciones.push({ campo, tipoDeFiltro, valor });
+        document.getElementById("filterFieldName").value = "";
+        document.getElementById("filterValue").value = "";
+        document.getElementById("filterType").value = "";
 
-            // Limpia los campos de entrada
-            document.getElementById("filterFieldName").value = "";
-            document.getElementById("filterValue").value = "";
-            document.getElementById("filterType").value = "";
-            
-        } else {
-            alert("Por favor, complete todos los campos para agregar un filtro.");
+        // Habilita el botón "Aplicar filtro"
+        document.getElementById("botonAplicar").disabled = false;
+    } else {
+        alert("Por favor, complete todos los campos para agregar un filtro.");
+    }
+
+    aplicarFiltros();
+
+    // Actualiza el contador de filtros
+    actualizarContadorFiltros();
+}
+
+
+    function eliminarFiltro(index) {
+        condiciones.splice(index, 1);
+        const filtroContainer = document.getElementById("filtroContainer");
+        filtroContainer.innerHTML = "";
+        aplicarFiltros();
+
+        // Deshabilita el botón "Aplicar filtro" si no hay más filtros
+        if (condiciones.length === 0) {
+            document.getElementById("botonAplicar").disabled = true;
+            cerrarPopup();
         }
+            
+
+
+        // Actualiza el contador de filtros
+        actualizarContadorFiltros();
+        //Mostrar los filtros restantes
+        mostrarFiltros();
+
     }
 
     function mostrarFiltros() {
-    // Crea la ventana emergente
-    const ventanaEmergente = window.open("", "Filtros Agregados", "width=400,height=400");
+    // Crea un objeto que mapee los valores de las opciones a sus textos
+    const opciones = {
+        "Contains": "Contiene",
+        "Equals": "Es igual a",
+        "Greater": "Mayor que",
+        "Less": "Menor que",
+        "NotContains": "No contiene",
+        "NotEquals": "No es igual a",
+        "GreaterOrEqual": "Mayor o igual que",
+        "LessOrEqual": "Menor o igual que"
+    };
 
-    // Agrega los filtros a la ventana emergente
-    let contenido = "<h2>Filtros Agregados:</h2>";
+    const popup = document.getElementById("popup");
+    let contenido = "<h4>Filtros Agregados:</h4>";
     for (let i = 0; i < condiciones.length; i++) {
         const condicion = condiciones[i];
-        contenido += `<p>${condicion.campo} ${condicion.tipoDeFiltro} ${condicion.valor} <button onclick="eliminarFiltro(${i})">Eliminar</button></p>`;
+        // Obtiene el texto de la opción correspondiente al valor del filtro
+        const textoOpcion = opciones[condicion.tipoDeFiltro];
+        contenido += `<p>${condicion.campo} ${textoOpcion} ${condicion.valor} <button onclick="eliminarFiltro(${i})">X</button></p>`;
     }
+    popup.innerHTML = contenido;
+}
 
-        // Define la funcion eliminarFiltro en la ventana emergente
-        ventanaEmergente.document.body.innerHTML = contenido;
-        ventanaEmergente.eliminarFiltro = function(index) {
-            // Elimina el filtro seleccionado del array de condiciones
-            condiciones.splice(index, 1);
 
-            // Actualiza la vista de la página para reflejar los cambios
-            const filtroContainer = document.getElementById("filtroContainer");
-            filtroContainer.innerHTML = "";
+    
 
-            // Aplica los filtros restantes
-            aplicarFiltros();
-
-            // Actualiza la ventana emergente para reflejar los cambios
-            mostrarFiltros();
-        };
-    } 
 
 
 
     // function mostrarFiltros() {
-    //     // Crea la ventana emergente
-    //     const ventanaEmergente = window.open("", "Filtros Agregados", "width=400,height=400");
-
-    //     // Agrega los filtros a la ventana emergente
-    //     let contenido = "<h2>Filtros Agregados:</h2>";
+    //     const popup = document.getElementById("popup");
+    //     let contenido = "<h4>Filtros Agregados:</h4>" ;
     //     for (let i = 0; i < condiciones.length; i++) {
     //         const condicion = condiciones[i];
-    //         contenido += `<p>${condicion.campo} ${condicion.tipoDeFiltro} ${condicion.valor}</p>`;
+    //         contenido += `<p>${condicion.campo} ${condicion.tipoDeFiltro} ${condicion.valor} <button onclick="eliminarFiltro(${i})">X</button></p>`;
     //     }
-    //     ventanaEmergente.document.body.innerHTML = contenido;
+    //     popup.innerHTML = contenido;
     // }
 
-
-
-    // Función para aplicar los filtros
     function aplicarFiltros() {
-        // Verifica si hay al menos una condición para aplicar filtros
-        if (condiciones.length > 0 && newBaseUrl) {
-            // Construir la URL del iframe con todas las condiciones
+        if (newBaseUrl) {
             let iframeUrl = newBaseUrl;
             condiciones.forEach((condicion, index) => {
                 const { campo, tipoDeFiltro, valor } = condicion;
                 const valorCodificado = encodeURIComponent(valor);
                 iframeUrl += `&filter${tipoDeFiltro}_${campo}=${valorCodificado}`;
             });
-
-            // Establecer la URL construida como fuente del iframe
             const iframe = document.getElementById("myIframe");
             iframe.src = iframeUrl;
         } else {
-            alert("Agregue al menos un filtro y una URL base antes de aplicar filtros.");
+            alert("Agregue una URL base antes de aplicar filtros.");
         }
     }
 
+    function actualizarContadorFiltros() {
+        const botonMostrarFiltros = document.getElementById("botonMostrarFiltros");
+        botonMostrarFiltros.textContent = `Mostrar Filtros (${condiciones.length})`;
+    }
 
-
-    // Funcion para limpiar los filtros
     function limpiarFiltros() {
-        // Limpia la lista de filtros y el array de condiciones
         const filtroContainer = document.getElementById("filtroContainer");
         filtroContainer.innerHTML = "";
         condiciones.length = 0;
+        const iframe = document.getElementById("myIframe");
+        iframe.src = newBaseUrl;
+        document.getElementById("filterFieldName").value = "";
+        document.getElementById("filterValue").value = "";
+        document.getElementById("filterType").value = "";
 
-        // Restablecer la URL del iframe a la URL original sin filtros
+        actualizarContadorFiltros();
+
+    }
+
+    function recargarIframe() {
         const iframe = document.getElementById("myIframe");
         iframe.src = newBaseUrl;
 
 
-        // Limpia los campos de entrada y los radio buttons
-        document.getElementById("filterFieldName").value = "";
-        document.getElementById("filterValue").value = "";
-        document.getElementById("filterType").value = "";
+
     }
 
-    //Recarga el Iframe po locoo
+    const filterButton = document.getElementById('botonMostrarFiltros');
+    const popup = document.getElementById('popup');
 
-    function recargarIframe(){
-        const iframe = document.getElementById("myIframe");
-        iframe.src = newBaseUrl; 
+
+    function togglePopup() {
+        popup.classList.toggle('show-popup');
     }
+
+    filterButton.addEventListener('click', () => {
+        togglePopup();
+    });
+
+    function cerrarPopup() {
+    togglePopup();
+}
+
+
+
+
 
 
 </script>

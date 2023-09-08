@@ -121,6 +121,8 @@ img:hover {
     cursor: pointer !important;    
 }
 
+
+
 .popup p
 {
     display: grid;
@@ -130,11 +132,12 @@ img:hover {
     
 } 
 
-.popup p button
-{
-    justify-content: end;
-    width: 80px;
+.popup p button {
+    display: flex;
+    justify-content: center;
+    width: 40px;
     margin-left: 30px;
+    height: 40px;
     background-color: rgb(255, 166, 0);
 }
 

@@ -60,7 +60,7 @@
 
                 <!-- Pop-up -->
                 <div class="popup" id="popup">
-                    
+                    <!-- <button class="close-button" onclick="cerrarPopup()">&#10006;</button> -->
                 </div>
             </nav>
             <!-- Aqui se define URL base -->
@@ -194,6 +194,7 @@
         const textoOpcion = opciones[condicion.tipoDeFiltro];
         contenido += `<p>${condicion.campo} ${textoOpcion} ${condicion.valor} <button onclick="eliminarFiltro(${i})">X</button></p>`;
     }
+    contenido += '<button class="close-button" onclick="cerrarPopup()">&#10006;</button>';
     popup.innerHTML = contenido;
 }
 

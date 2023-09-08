@@ -282,6 +282,18 @@ body {
     margin-left: 50px;
 }
 
+.logo #logoFilter
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-right: 100px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
 
 @media screen and (max-width: 720px) {
     body {
@@ -360,6 +372,18 @@ body {
         flex-wrap: wrap;
     }
 
+    .logo #logoFilter
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-right: 30px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
     
     
 
@@ -386,15 +410,6 @@ body {
         width: 90px;
     }
 
-
-    
-    
-
-
-
-
-    
-    
 
 }
 

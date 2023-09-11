@@ -51,6 +51,8 @@
                     <button class="actualizar" type="button"onclick="recargarIframe()">Actualizar</button>
                     <button class="limpiarFiltro" type="button" onclick="limpiarFiltros()">Limpiar filtros</button>
                     <button id="botonMostrarFiltros" type="button" onclick="mostrarFiltros()">Filtros</button>
+                    <!-- <button onclick="myFunction()">Activar Pantalla Completa</button> -->
+
 
                     <!-- <button class="filter-button" id="filterButton">
                         <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
@@ -68,7 +70,7 @@
         </section>
         <div class="wrapper">
             <div class="hidelogo"></div>
-            <iframe id="myIframe" width='2080px' height='760'></iframe>
+            <iframe id="myIframe" scale="0.9"; allowfullscreen ></iframe>
         </div>
             <!-- <iframe id="myIframe" class="airtable-embed" src="" frameborder="0" onmousewheel="" width="100%" height="88%" style= "background: transparent; border: 1px solid #ccc;"></iframe> -->
     </main>
@@ -167,7 +169,7 @@
         filtroContainer.innerHTML = "";
         aplicarFiltros();
 
-        // Deshabilita el botón "Aplicar filtro" si no hay más filtros
+        // Deshabilita el boton "Aplicar filtro" si no hay mas filtros
         if (condiciones.length === 0) {
             document.getElementById("botonAplicar").disabled = true;
             cerrarPopup();
@@ -208,19 +210,6 @@
 
 }
 
-
-
-
-
-    // function mostrarFiltros() {
-    //     const popup = document.getElementById("popup");
-    //     let contenido = "<h4>Filtros Agregados:</h4>" ;
-    //     for (let i = 0; i < condiciones.length; i++) {
-    //         const condicion = condiciones[i];
-    //         contenido += `<p>${condicion.campo} ${condicion.tipoDeFiltro} ${condicion.valor} <button onclick="eliminarFiltro(${i})">X</button></p>`;
-    //     }
-    //     popup.innerHTML = contenido;
-    // }
 
     function aplicarFiltros() {
         if (newBaseUrl) {
@@ -288,22 +277,36 @@
     const logoFilter = document.getElementById("logoFilter");
     const miSeccion = document.getElementById("miSeccion");
 
-    // Variable para llevar un registro de si la sección está visible o no
+    // Variable para llevar un registro de si la seccion está visible o no
     let seccionVisible = true;
 
     // Agregar un evento de click a la imagen
     logoFilter.addEventListener("click", function() {
         if (seccionVisible) {
-        // Si la sección está visible, ocúltala
+        // Si la seccion esta <visible, ocultar
         miSeccion.style.display = "none";
         } else {
-        // Si la sección está oculta, muéstrala
+        // Si la sección esta oculta, mostrar
         miSeccion.style.display = "block";
         }
 
         // Cambia el valor de seccionVisible al valor opuesto
         seccionVisible = !seccionVisible;
     });
+
+    // Ventana completa 
+        function myFunction() {
+    var elem = document.getElementById("myIframe");
+    if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+    } else if (elem.mozRequestFullScreen) { 
+        elem.mozRequestFullScreen();
+    } else if (elem.webkitRequestFullscreen) { 
+        elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { 
+        elem.msRequestFullscreen();
+    }
+    }
 
 
 

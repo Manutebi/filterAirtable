@@ -3,7 +3,12 @@
 
 
 
-body {
+body, html {
+    zoom: 1;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* Esto oculta cualquier desbordamiento horizontal */
     /* overflow: hidden; */
     background: rgb(207, 207, 207);
     background: radial-gradient(circle, rgba(207, 207, 207, 1) 0%, rgba(255, 255, 255, 1) 100%);
@@ -301,12 +306,20 @@ body {
     position:relative;
     z-index: 1;
     display: inline-block;
+    width: 100%;
+    height: 780px;
+}
+
+.wrapper #myIframe
+{
+    width: 100%;
+    height: 100%;
 }
 
 .hidelogo 
 {
     position: absolute;
-    width: 2080px;
+    width: 8080px;
     height: 25px;
     background: #ffffff;
     right: 0px;
@@ -318,11 +331,21 @@ body {
 
 @media screen and (max-width: 1280px) {
 
+        /* .wrapper 
+    {
+        position:relative;
+        z-index: 1;
+        display: inline-block;
+        width: 100%;
+        height: 550px;
+    }
+
     .wrapper #myIframe
     {
-        width: 1280px;
-        height: 480px;
-    }
+        width: 100%;
+        height: 100%;
+    } */
+
     
 }
 
@@ -455,12 +478,20 @@ body {
         
     }
 
+    .wrapper 
+    {
+        position:relative;
+        z-index: 1;
+        display: inline-block;
+        width: 100%;
+        height: 380px;
+    }
+
     .wrapper #myIframe
     {
-        height: 260px;
-        width: 750px;
-
-    }
+        width: 100%;
+        height: 100%;
+}
 
     .botones button
     {

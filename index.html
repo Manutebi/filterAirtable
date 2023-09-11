@@ -15,7 +15,7 @@
             </div>
             <div class="logo">
                 <img id="logoFilter" src="img/filtrar (3).png" alt="">
-                <img id="logoImage" src="" width="80px" alt="">
+                <img id="logoImage" src="" width="80px" height="50px" alt="">
             </div>
         </nav>
     </header>
@@ -30,15 +30,20 @@
     
                     <select name="filterType" id="filterType">
                         <option value="" disabled selected>Seleccione filtro</option>
-                        <option value="Contains">Contiene</option>
-                        <option value="Equals">Es igual a</option>
-                        <option value="Greater">Mayor que</option>
-                        <option value="Less">Menor que</option>
+                        <option value="Contains">Contiene</option> 
+                        <option value="Equals">Es igual a</option> 
+                        <option value="Greater">Mayor que</option> 
+                        <option value="Less">Menor que</option> 
                         <option value="NotContains">No contiene</option>
-                        <option value="NotEquals">No es igual a</option>
-                        <option value="GreaterOrEqual">Mayor o igual que</option>
+                        <option value="NotEquals">No es igual a</option> 
+                        <option value="GreaterOrEqual">Mayor o igual que</option> 
                         <option value="LessOrEqual">Menor o igual que</option>
-    
+                        <option value="IsAnyOf">Es cualquiera de</option>
+                        <option value="IsNoneOf">Es ninguno de</option>
+                        <option value="HasAnyOf">Tiene cualquiera de</option>
+                        <option value="HasAllOf">Tiene todo de</option>
+                        <option value="Empty">Vacio</option>
+                        <option value="NotEmpty">No vacio</option>
                     </select>
                     <input type="text" id="filterValue" placeholder="Valor de filtro">
                     <div id="filtroContainer">
@@ -194,7 +199,13 @@
         "NotContains": "No contiene",
         "NotEquals": "No es igual a",
         "GreaterOrEqual": "Mayor o igual que",
-        "LessOrEqual": "Menor o igual que"
+        "LessOrEqual": "Menor o igual que",
+        "IsAnyOf": "Es cualquiera de",
+        "IsNoneOf": "No es ninguno de",
+        "HasAnyOf": "Tiene cualquiera de",
+        "HasAllOf": "Tiene todos de",
+        "Empty": "Vacio",   
+        "NotEmpty": "No está vacio"
     };
 
     const popup = document.getElementById("popup");

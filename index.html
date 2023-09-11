@@ -15,12 +15,12 @@
             </div>
             <div class="logo">
                 <img id="logoFilter" src="img/filtrar (3).png" alt="">
-                <img id="logoImage" src="https://res.cloudinary.com/dvikvg6ml/image/upload/v1693860781/Benergy_logo_bueno_t2wwiw.png" width="80px" alt="">
+                <img id="logoImage" src="" width="80px" alt="">
             </div>
         </nav>
     </header>
     <main>
-        <section>
+        <section id="miSeccion">
             <nav class="nav_menu2">
                 <!-- lista de los campos -->
                 <div class="form-control-sm">
@@ -46,10 +46,10 @@
                     </div>
                 </div>
                 <div class="botones" >
-                    <button type="button" onclick="agregarFiltro()">Agregar filtro</button>
+                    <button class="agregarFiltro" type="button" onclick="agregarFiltro()">Agregar filtro</button>
                     <button type="button" id="botonAplicar" onclick="aplicarFiltros()" disabled>Aplicar filtro</button>
-                    <button type="button"onclick="recargarIframe()">Actualizar</button>
-                    <button type="button" onclick="limpiarFiltros()">Limpiar filtros</button>
+                    <button class="actualizar" type="button"onclick="recargarIframe()">Actualizar</button>
+                    <button class="limpiarFiltro" type="button" onclick="limpiarFiltros()">Limpiar filtros</button>
                     <button id="botonMostrarFiltros" type="button" onclick="mostrarFiltros()">Filtros</button>
 
                     <!-- <button class="filter-button" id="filterButton">
@@ -65,13 +65,20 @@
                 </div>
             </nav>
             <!-- Aqui se define URL base -->
-            <iframe id="myIframe" class="airtable-embed" src="" frameborder="0" onmousewheel="" width="100%" height="88%" style= "background: transparent; border: 1px solid #ccc;"></iframe>
         </section>
+        <div class="wrapper">
+            <div class="hidelogo"></div>
+            <iframe id="myIframe" width='2080px' height='760'></iframe>
+        </div>
+            <!-- <iframe id="myIframe" class="airtable-embed" src="" frameborder="0" onmousewheel="" width="100%" height="88%" style= "background: transparent; border: 1px solid #ccc;"></iframe> -->
     </main>
     
 
 </body>
 <script>
+    
+
+
     const urlParams = new URLSearchParams(window.location.search);
     const select = document.getElementById('filterFieldName');
     const newBaseUrl = urlParams.get('baseUrl');
@@ -276,6 +283,31 @@
     function cerrarPopup() {
     togglePopup();
 }
+
+    // Obtener la imagen y la sección por su ID
+    const logoFilter = document.getElementById("logoFilter");
+    const miSeccion = document.getElementById("miSeccion");
+
+    // Variable para llevar un registro de si la sección está visible o no
+    let seccionVisible = true;
+
+    // Agregar un evento de click a la imagen
+    logoFilter.addEventListener("click", function() {
+        if (seccionVisible) {
+        // Si la sección está visible, ocúltala
+        miSeccion.style.display = "none";
+        } else {
+        // Si la sección está oculta, muéstrala
+        miSeccion.style.display = "block";
+        }
+
+        // Cambia el valor de seccionVisible al valor opuesto
+        seccionVisible = !seccionVisible;
+    });
+
+
+
+
 
 
 

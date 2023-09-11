@@ -145,6 +145,7 @@ img:hover {
 .show-popup {
     opacity: 1;
     pointer-events: auto; /* Permite hacer clic en elementos detrás del pop-up */
+    z-index: 999;
     
 }
 
@@ -292,12 +293,50 @@ body {
     width: 30px;
     height: 30px;
     cursor: pointer;
+
+}
+
+.wrapper 
+{
+    position:relative;
+    z-index: 1;
+    display: inline-block;
+}
+
+.hidelogo 
+{
+    position: absolute;
+    width: 2080px;
+    height: 32px;
+    background: #ffffff;
+    right: 0px;
+    bottom: 0px;
+    z-index:999;
+    display: block;
+    color: #fff;
+}
+
+@media screen and (max-width: 1280px) {
+
+    .wrapper #myIframe
+    {
+        width: 1280px;
+        height: 480px;
+    }
+    
 }
 
 
 @media screen and (max-width: 720px) {
     body {
         font-size: 0.6rem;
+    }
+
+    .wrapper
+    {
+        width: 2080px;
+        height: auto;
+
     }
 
     
@@ -323,6 +362,11 @@ body {
     font-size: .7rem;
     }
 
+    .wrapper
+    {
+        width: 100%;
+    }
+
 
     /* h3
     {
@@ -341,6 +385,18 @@ body {
         grid-template-rows: 0fr 0fr;
         place-items: center;
         margin: 1px;
+    }
+
+    .botones .agregarFiltro,.limpiarFiltro
+    {
+        margin-left: 90px;
+
+    }
+
+    .botones .actualizar, #botonMostrarFiltros
+    {
+        margin-right: 90px;
+
     }
     
     .botones button
@@ -373,16 +429,16 @@ body {
     }
 
     .logo #logoFilter
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    margin-right: 30px;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-}
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        margin-right: 30px;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
 
     
     
@@ -398,10 +454,10 @@ body {
         
     }
 
-    #myIframe
+    .wrapper #myIframe
     {
-        height: 70%;
-        width: 100%;
+        height: 260px;
+        width: 750px;
 
     }
 

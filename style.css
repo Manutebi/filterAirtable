@@ -4,11 +4,10 @@
 
 
 body, html {
-    zoom: 0.9;
+    /* zoom: 0.9; */
     margin: 0;
     padding: 0;
     width: 100%;
-    overflow-x: hidden; /* Esto oculta cualquier desbordamiento horizontal */
     /* overflow: hidden; */
     background: rgb(207, 207, 207);
     background: radial-gradient(circle, rgba(207, 207, 207, 1) 0%, rgba(255, 255, 255, 1) 100%);
@@ -400,6 +399,7 @@ body {
     #logoimage
     {
         width: 70px;
+        height: 25px;
     }
 
     .botones
@@ -468,6 +468,21 @@ body {
     
 
     
+}
+
+@media screen and (max-width: 632px){
+
+
+    .wrapper
+    {
+        width: 100%;
+    }
+    .wrapper #myIframe
+    {
+        width: 100%;
+    }
+
+
 }
 
 @media screen and (max-width: 844px) and (orientation: landscape) {

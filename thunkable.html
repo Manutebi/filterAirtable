@@ -4,41 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thunkable</title>
+    
 </head>
     <style>
-        body
-        {
-            overflow: hidden;
+        .iframe-container {
+            position: relative;
         }
-        /* .iframe-container {
-        width: 800px;
-        height: 400px;
-        overflow: hidden;
-        position: relative;
+
+        .iframe-container iframe {
+            width: 100%;
+            height: 1080px;
         }
         
-        .iframe-container iframe {
-        width: 100%;
-        height: 100%;
-        border: none;
-        } */
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 30px;
+            background: white;
+        }
 
+        .overlay img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            cursor: pointer;
+        }
 
+        @media screen and (max-width: 702px){
 
+            .iframe-container iframe{
+
+            width: 100%;
+            height: 1080px;
+            
+            }
+
+            
+        }
+
+    
     </style>
 <body>
-    
-        
-        
-        <div class="iframe-container">
-            <iframe src="http://benergy.institutosolar.cl/"   width="100%" height="1080px"></iframe>
+    <div class="iframe-container">
+        <iframe src="http://benergy.institutosolar.cl/"></iframe>
+        <div class="overlay">
+            <img src="img/benergy.png"/>
         </div>
-        
-
-    <!-- <iframe src="http://benergy.institutosolar.cl/" width="100%" height="720"></iframe> -->
-    <!-- <iframe src="http://benergy.institutosolar.cl/" width="800" height="400" scrolling="no" sandbox="allow-same-origin allow-scripts allow-popups"></iframe> -->
-
-
+    </div>
     
+
 </body>
 </html>

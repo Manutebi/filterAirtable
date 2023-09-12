@@ -15,6 +15,27 @@ body, html {
 
 }
 
+.logo #logoImage
+{
+    width: 90px; 
+    height: 30px;
+    display: flex;
+}
+
+#fullScreen
+{
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    
+}
+
+#fullScreen .bi bi-fullscreen
+{
+    color: #fff;
+    
+}
+
 
 .title p
 {
@@ -328,6 +349,10 @@ body {
     color: #fff;
 }
 
+/*////////////////////////////////////////////
+/////////////////Media Queries///////////////
+//////////////////////////////////////////// */
+
 @media screen and (max-width: 1280px) {
 
         /* .wrapper 
@@ -345,7 +370,6 @@ body {
         height: 100%;
     } */
 
-    
 }
 
 

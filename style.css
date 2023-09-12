@@ -313,8 +313,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
-    margin-right: 100px;
+    margin-top: 5px;
+    margin-right: 10px;
     width: 30px;
     height: 30px;
     cursor: pointer;
@@ -481,8 +481,8 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: 20px;
-        margin-right: 30px;
+        margin-top: 5px;
+        margin-right: 10px;
         width: 30px;
         height: 30px;
         cursor: pointer;
@@ -494,7 +494,7 @@ body {
     
 }
 
-@media screen and (max-width: 632px){
+@media screen and (max-width: 720px){
 
 
     .wrapper

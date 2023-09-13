@@ -339,7 +339,7 @@ body {
 .hidelogo 
 {
     position: absolute;
-    width: 8080px;
+    width: 100%;
     height: 25px;
     background: #ffffff;
     right: 0px;

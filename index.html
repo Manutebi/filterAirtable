@@ -27,7 +27,7 @@
                     <select class="" name="filterFieldName" id="filterFieldName">
                         <option value="" disabled selected>Nombre del campo</option>                        
                     </select>
-    
+
                     <select name="filterType" id="filterType">
                         <option value="" disabled selected>Seleccione filtro</option>
                         <option value="Contains">Contiene</option> 
@@ -57,7 +57,6 @@
                     <button class="limpiarFiltro" type="button" onclick="limpiarFiltros()">Limpiar filtros</button>
                     <button id="botonMostrarFiltros" type="button" onclick="mostrarFiltros()">Filtros</button>
                     <!-- <button onclick="myFunction()" type="button" id="fullScreen" class="fullScreen-icon"><i class="bi bi-fullscreen"></i></button> -->
-                    
                     <!-- <button onclick="myFunction()">Activar Pantalla Completa</button> -->
 
 
@@ -75,8 +74,8 @@
             <!-- Aqui se define URL base -->
         </section>
         <div class="wrapper">
+            <p id="bottomParagraph">© Copyrigth 2023 Todos los derechos reservados.  </p>
             <div class="hidelogo">
-                <p>Todos los derechos reservados 2023</p>
             </div>
             <iframe id="myIframe" allowfullscreen ></iframe>
         </div>
@@ -86,9 +85,6 @@
 
 </body>
 <script>
-    
-
-
     const urlParams = new URLSearchParams(window.location.search);
     const select = document.getElementById('filterFieldName');
     const newBaseUrl = urlParams.get('baseUrl');
@@ -115,7 +111,6 @@
         }
     }
 
-
     //Obtener los parametros por URL Logo, titulo del documento y pagina
     const logo = urlParams.get('logo');
     const logoImage = document.getElementById('logoImage');
@@ -138,7 +133,11 @@
     // const favIcon = urlParams.get('favicon');
     // const favicon = document.getElementById('favIcon');
     // favicon.innerHTML = favIcon;
-    
+
+    const bottomParagraph = urlParams.get('parrafoB') ||'© Copyrigth 2023 Todos los derechos reservados.' ; 
+    const bottomP = document.getElementById('bottomParagraph');
+    bottomP.innerHTML = bottomParagraph;
+
     const paragraph = urlParams.get('parrafo');
     const title = document.getElementById('title');
     title.innerHTML = paragraph;
@@ -210,6 +209,7 @@
         "Empty": "Vacio",   
         "NotEmpty": "No está vacio"
     };
+    
 
     const popup = document.getElementById("popup");
     let contenido = "<h4>Filtros Agregados:</h4>";
@@ -321,15 +321,6 @@
         elem.msRequestFullscreen();
     }
     }
-
-
-
-
-
-
-
-
-
 
 </script>
 </html>

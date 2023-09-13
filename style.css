@@ -346,8 +346,42 @@ body {
     bottom: 0px;
     z-index:999;
     display: block;
-    color: #fff;
+    color: #000;
+    background: rgb(207, 207, 207);
+    background: radial-gradient(circle, rgba(207, 207, 207, 1) 0%, rgba(255, 255, 255, 1) 100%);
 }
+
+#bottomParagraph {
+
+    position: absolute;
+    color: #000;
+    bottom: -5;
+    left: 0;
+    right: 0;
+    height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index:1000; 
+    font-size: .9em;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/*/////////////////////////////
+//////////DisplayBlock///////*/
+/*/////////////////////////*/
+/* p {
+
+    position: absolute;
+    color: #000;
+    bottom: 0;
+    left: 40%;
+    height: 5;
+    display: block;
+    z-index:1000; 
+    font-size: .9em;
+    font-family: 'Courier New', Courier, monospace;
+} */
 
 /*////////////////////////////////////////////
 /////////////////Media Queries///////////////

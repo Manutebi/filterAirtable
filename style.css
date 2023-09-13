@@ -132,6 +132,11 @@ img:hover {
     border-radius: 15px;
 }
 
+svg
+{
+    height: 30px !important;
+}
+
  /* Estilos para el botón de cierre */
 #popup .close-button 
 {
@@ -143,7 +148,8 @@ img:hover {
     background: none !important;
     border: none !important;
     font-size: 18px !important;
-    cursor: pointer !important;    
+    cursor: pointer !important;
+    width: 35px !important  ;    
 }
 
 

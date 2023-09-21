@@ -352,7 +352,7 @@ body {
     position:relative;
     z-index: 1;
     display: inline-block;
-    width: 100%;
+    width: 98%;
     height: 780px;
 }
 
@@ -559,11 +559,11 @@ body {
 
     .wrapper
     {
-        width: 100%;
+        width: 98%;
     }
     .wrapper #myIframe
     {
-        width: 100%;
+        width: 98%;
     }
 
 
@@ -588,7 +588,7 @@ body {
 
     .wrapper #myIframe
     {
-        width: 100%;
+        width: 98%;
         height: 100%;
 }
 

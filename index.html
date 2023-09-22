@@ -36,7 +36,7 @@
         </header>
         <main>
             <section id="miSeccion">
-                <nav class="nav_menu2">
+                <nav id="menuFilters" class="nav_menu2">
                     <!-- lista de los campos -->
                     <div class="form-control-sm">
                         <select class="" name="filterFieldName" id="filterFieldName">
@@ -122,7 +122,7 @@
         </header>
         <main>
             <section id="miSeccion1">
-                <nav class="nav_menu2">
+                <nav id="menuFilters1" class="nav_menu2">
                     <!-- lista de los campos -->
                     <div class="form-control-sm">
                         <select class="" name="filterFieldName1" id="filterFieldName1">
@@ -262,6 +262,38 @@
     const paragraphb = urlParams.get('parrafob');
     const titleb = document.getElementById('titleb')
     titleb.innerHTML = paragraphb;
+
+    // Para ocultar filtros seccion c
+
+    const filtersC = urlParams.get('filtersC');
+
+    const sectionC = document.getElementById('menuFilters');
+    const buttonC = document.getElementById('logoFilter');
+
+    if (filtersC === 'si') {
+        sectionC.style.display = 'block';
+        buttonC.style.display = 'block';
+    } 
+    else if (filtersC === 'no') {
+        sectionC.style.display = 'none';
+        buttonC.style.display = 'none';
+    }
+
+    // Para ocultar filtros seccion B
+    const filtersB = urlParams.get('filtersB');
+
+    const sectionB = document.getElementById('menuFilters1');
+    const buttonB = document.getElementById('logoFilter1');
+
+    if (filtersB === 'si') {
+        sectionB.style.display = 'block';
+        buttonB.style.display = 'block';
+    } 
+    else if (filtersB === 'no') {
+        sectionB.style.display = 'none';
+        buttonB.style.display = 'none';
+    }
+
 
     //////////////////////////////////////////////
 

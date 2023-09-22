@@ -9,7 +9,7 @@ html {
     width: 100%;
     /* overflow: hidden; */
     background: rgb(236, 236, 236);
-    background: linear-gradient(90deg, rgba(236, 236, 236, 1) 0%, rgba(249, 249, 249, 1) 100%);
+    /* background: linear-gradient(90deg, rgba(236, 236, 236, 1) 0%, rgba(249, 249, 249, 1) 100%); */
     font-family: Source Sans Pro, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
 
 }
@@ -62,8 +62,8 @@ html {
     justify-content: flex-end;
     align-items: center;
     margin-top: 20px;
-    font-size: 1rem;
-    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5em;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
 
 }
@@ -205,7 +205,7 @@ svg {
 
 
 
-/* Estilos para pupup2 */
+/* Estilos para popup2 */
 
 /* Estilos para el pop-up */
 .popup1 {
@@ -495,7 +495,7 @@ body {
     display: block;
     color: #000;
     background: rgb(236, 236, 236);
-    background: linear-gradient(90deg, rgba(236, 236, 236, 1) 0%, rgba(249, 249, 249, 1) 100%);
+    /* background: linear-gradient(90deg, rgba(236, 236, 236, 1) 0%, rgba(249, 249, 249, 1) 100%); */
 }
 
 .hidelogo1 {

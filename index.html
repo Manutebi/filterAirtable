@@ -14,6 +14,20 @@
                 <p id="title" ></p>
             </div>
             <div class="logo">
+                <a href="#contenidoDuplicado">
+                    <button id="mostrar" class="mostrar">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+                            <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+                            <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+                        </svg>
+                    </button>
+                </a>
+                <button id="ocultar" class="ocultarContenido">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-eye-slash-fill" viewBox="0 0 16 16">
+                    <path d="m10.79 12.912-1.614-1.615a3.5 3.5 0 0 1-4.474-4.474l-2.06-2.06C.938 6.278 0 8 0 8s3 5.5 8 5.5a7.029 7.029 0 0 0 2.79-.588zM5.21 3.088A7.028 7.028 0 0 1 8 2.5c5 0 8 5.5 8 5.5s-.939 1.721-2.641 3.238l-2.062-2.062a3.5 3.5 0 0 0-4.474-4.474L5.21 3.089z"/>
+                    <path d="M5.525 7.646a2.5 2.5 0 0 0 2.829 2.829l-2.83-2.829zm4.95.708-2.829-2.83a2.5 2.5 0 0 1 2.829 2.829zm3.171 6-12-12 .708-.708 12 12-.708.708z"/>
+                </svg>
+                </button>
                 <img id="logoFilter" src="img/filtrar (3).png" alt="">
                 <img id="logoImage" src=""  alt="">
             </div>
@@ -56,19 +70,10 @@
                     <button class="actualizar" type="button"onclick="recargarIframe()">Actualizar</button>
                     <button class="limpiarFiltro" type="button" onclick="limpiarFiltros()">Limpiar filtros</button>
                     <button id="botonMostrarFiltros" type="button" onclick="mostrarFiltros()">Filtros</button>
-                    <!-- <button onclick="myFunction()" type="button" id="fullScreen" class="fullScreen-icon"><i class="bi bi-fullscreen"></i></button> -->
-                    <!-- <button onclick="myFunction()">Activar Pantalla Completa</button> -->
-
-
-                    <!-- <button class="filter-button" id="filterButton">
-                        <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
-                            <path d="m509.796 326.874c-44.857-87.465-142.483-166.874-253.796-166.874-112.094 0-209.436 80.377-253.796 166.874-2.938 5.729-2.938 12.523 0 18.253 44.857 87.464 142.483 166.873 253.796 166.873 126.04 0 218.947-98.922 253.796-166.874 2.938-5.729 2.938-12.523 0-18.252zm-253.796 145.126c-90.776 0-166.974-60.307-212.956-136 45.473-74.855 121.428-136 212.956-136 91.137 0 167.232 60.735 212.956 136-46.194 76.038-122.697 136-212.956 136zm-249.697-360.828c7.39-8.209 20.037-8.871 28.246-1.48l44.544 40.107c8.208 7.392 8.871 20.037 1.48 28.246-7.391 8.21-20.038 8.87-28.246 1.48l-44.544-40.108c-8.208-7.39-8.871-20.036-1.48-28.245zm229.697-11.172v-80c0-11.045 8.954-20 20-20s20 8.955 20 20v80c0 11.045-8.954 20-20 20s-20-8.955-20-20zm-126.8-44.545c-4.493-10.091.045-21.913 10.136-26.406 10.092-4.493 21.913.045 26.406 10.136l30.587 68.7c4.493 10.09-.045 21.913-10.136 26.406-10.062 4.479-21.898-.014-26.406-10.136zm322.227 122.59c-7.391-8.208-6.729-20.854 1.48-28.246l44.544-40.107c8.208-7.391 20.855-6.729 28.246 1.48 7.391 8.208 6.729 20.854-1.48 28.245l-44.544 40.108c-8.211 7.392-20.856 6.727-28.246-1.48zm-95.757-70.16 30.587-68.7c4.493-10.091 16.315-14.629 26.406-10.136s14.629 16.315 10.136 26.406l-30.587 68.699c-4.513 10.137-16.36 14.609-26.406 10.137-10.09-4.493-14.628-16.315-10.136-26.406zm-79.67 129.865c-54.175 0-98.25 44.075-98.25 98.25s44.075 98.25 98.25 98.25 98.25-44.075 98.25-98.25-44.075-98.25-98.25-98.25zm0 156.5c-32.119 0-58.25-26.131-58.25-58.25s26.131-58.25 58.25-58.25 58.25 26.131 58.25 58.25-26.131 58.25-58.25 58.25z"/>
-                        </svg>
-                    </button> -->
                 </div>
                 <!-- Pop-up -->
                 <div class="popup" id="popup">
-                    <!-- <button class="close-button" onclick="cerrarPopup()">&#10006;</button> -->
+                    <button class="close-button" onclick="cerrarPopup()">&#10006;</button>
                 </div>
             </nav>
             <!-- Aqui se define URL base -->
@@ -79,9 +84,14 @@
             </div>
             <iframe id="myIframe" allowfullscreen ></iframe>
         </div>
-            <!-- <iframe id="myIframe" class="airtable-embed" src="" frameborder="0" onmousewheel="" width="100%" height="88%" style= "background: transparent; border: 1px solid #ccc;"></iframe> -->
+
+        <iframe id="myIframe2" src="" style="width: 98%; height: 900; display: none;" frameborder="0"></iframe>
     </main>
-    
+    <br>
+    <!-- Contenedor para el contenido duplicado -->
+    <div id="contenidoDuplicado">
+
+    </div>
 
 </body>
 <script>
@@ -134,7 +144,7 @@
     // const favicon = document.getElementById('favIcon');
     // favicon.innerHTML = favIcon;
 
-    const bottomParagraph = urlParams.get('parrafoB') ||'© Copyrigth 2023 Todos los derechos reservados.' ; 
+    const bottomParagraph = urlParams.get('parrafoB') ||'' ; 
     const bottomP = document.getElementById('bottomParagraph');
     bottomP.innerHTML = bottomParagraph;
 
@@ -308,19 +318,55 @@
         seccionVisible = !seccionVisible;
     });
 
-    // Ventana completa 
-        function myFunction() {
-    var elem = document.getElementById("myIframe");
-    if (elem.requestFullscreen) {
-        elem.requestFullscreen();
-    } else if (elem.mozRequestFullScreen) { 
-        elem.mozRequestFullScreen();
-    } else if (elem.webkitRequestFullscreen) { 
-        elem.webkitRequestFullscreen();
-    } else if (elem.msRequestFullscreen) { 
-        elem.msRequestFullscreen();
-    }
-    }
+    const iframe = document.getElementById("myIframe2");
+    const buttonMostrar = document.getElementById("mostrar");
+    const buttonOcultar = document.getElementById("ocultar");
+
+    iframe.style.display = "none";
+    buttonOcultar.style.display = "none";
+
+    buttonMostrar.title = "Mostrar tabla"
+    buttonOcultar.title = "Ocultar tabla"
+
+    buttonMostrar.addEventListener("click", function() {
+        // Cuando se hace clic en el boton de mostrar, se muestra el iframe y el boton de ocultar
+        iframe.style.display = "block";
+        buttonOcultar.style.display = "block";
+        
+        // Ocultar boton mostrar
+        buttonMostrar.style.display = "none";
+    });
+
+    buttonOcultar.addEventListener("click", function() {
+        // Cuando se hace clic en el boton de ocultar, se oculta el iframe y el boton de ocultar
+        iframe.style.display = "none";
+        buttonOcultar.style.display = "none";
+        
+        // Mostrar el boton mostrar
+        buttonMostrar.style.display = "block";
+    });
+
+    // Se carga url de la ubicacion actual
+    window.onload = function() {
+    const iframe = document.getElementById("myIframe2");
+    iframe.src = window.location.href;
+}
+
+
+    iframe.addEventListener("load", function() {
+        const botonDentroDelIframe = iframe.contentWindow.document.getElementById("mostrar");
+        const parrafoDentroDelIframe = iframe.contentWindow.document.getElementById("bottomParagraph");
+
+        if (botonDentroDelIframe) {
+            botonDentroDelIframe.style.display = "none";
+        }
+        if(parrafoDentroDelIframe) {
+            parrafoDentroDelIframe.style.display = "none";
+        }
+
+    });
+
+
 
 </script>
 </html>

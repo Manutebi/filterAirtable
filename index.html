@@ -463,21 +463,6 @@
         }
     }
 
-    // Para iframe2
-    function aplicarFiltros1() {
-        if (newBaseUrl2) {
-            let iframeUrl = newBaseUrl2;
-            condiciones1.forEach((condicion1, index) => {
-                const { campo1, tipoDeFiltro1, valor1 } = condicion1;
-                const valorCodificado1 = encodeURIComponent(valor1);
-                iframeUrl += `&filter${tipoDeFiltro1}_${campo1}=${valorCodificado1}`;
-            });
-            const iframe = document.getElementById("myIframe2");
-            iframe.src = iframeUrl;
-        } else {
-            alert("Agregue una URL base antes de aplicar filtros.");
-        }
-    }
 
     function actualizarContadorFiltros() {
         const botonMostrarFiltros = document.getElementById("botonMostrarFiltros");
@@ -490,11 +475,6 @@
         botonMostrarFiltros1.textContent = `Filtros (${condiciones1.length})`;
     }
 
-    // Para iframe2
-    function actualizarContadorFiltros1() {
-        const botonMostrarFiltro1s = document.getElementById("botonMostrarFiltros1");
-        botonMostrarFiltros1.textContent = `Filtros (${condiciones1.length})`;
-    }
 
     function limpiarFiltros() {
         const filtroContainer = document.getElementById("filtroContainer");

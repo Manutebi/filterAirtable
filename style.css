@@ -1,65 +1,63 @@
 @import url(https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap);
 
-body, html {
+body,
+html {
     /* zoom: 0.9; */
     margin: 0;
     padding: 0;
     width: 100%;
     /* overflow: hidden; */
-    background: rgb(236,236,236);
-    background: linear-gradient(90deg, rgba(236,236,236,1) 0%, rgba(249,249,249,1) 100%);
+    background: rgb(236, 236, 236);
+    background: linear-gradient(90deg, rgba(236, 236, 236, 1) 0%, rgba(249, 249, 249, 1) 100%);
     font-family: Source Sans Pro, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
 
 }
 
 
-.mostrar, .ocultarContenido {
+.mostrar,
+.ocultarContenido {
     width: 40px;
     height: 40px;
     margin-right: 15px;
     background-color: transparent;
     margin-bottom: 1rem;
     background: rgb(207, 207, 207);
-    
+
 }
 
-.ocultarContenido:hover{
+.ocultarContenido:hover {
     color: #fff !important;
     background-color: #ff7700 !important;
 }
 
-.mostrar:hover{
+.mostrar:hover {
     color: #fff !important;
     background-color: #0099ff !important;
 }
 
 
 
-.logo #logoImage
-{
-    width: 90px; 
+.logo #logoImage {
+    width: 90px;
     height: 30px;
     display: flex;
 }
 
-#fullScreen
-{
+#fullScreen {
     width: 50px;
     height: 50px;
     background-color: #fff;
-    
+
 }
 
-#fullScreen .bi bi-fullscreen
-{
+#fullScreen .bi bi-fullscreen {
     color: #fff;
-    
+
 }
 
 
-.title p
-{
+.title p {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -67,24 +65,22 @@ body, html {
     font-size: 1rem;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
-    
+
 }
 
 /* .title{
     grid-column: 2;
 } */
 
-.nav_menu
-{
+.nav_menu {
     display: grid;
-    grid-template-columns: 1fr 1fr ;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
-    margin-right: 40px ;
-    
+    margin-right: 40px;
+
 }
 
-.nav_menu .logo
-{
+.nav_menu .logo {
     display: flex;
     justify-content: end;
     transition: transform 0.2s ease-in-out;
@@ -93,9 +89,11 @@ body, html {
 }
 
 img:hover {
-    transform: scale(1.1); /* Escala la imagen al 110% en el hover */
-    animation: pulsacion 1s infinite; /* Inicia la animación de pulsación */
-    
+    transform: scale(1.1);
+    /* Escala la imagen al 110% en el hover */
+    animation: pulsacion 1s infinite;
+    /* Inicia la animación de pulsación */
+
 }
 
 @keyframes pulsacion {
@@ -103,10 +101,12 @@ img:hover {
         transform: scale(1);
 
     }
+
     50% {
         transform: scale(1.1);
 
     }
+
     100% {
         transform: scale(1);
 
@@ -128,23 +128,29 @@ img:hover {
 .svg-icon {
     width: 100%;
     height: 100%;
-    fill: #007BFF; /* Color inicial del icono */
-    transition: fill 0.3s ease-in-out; /* Transición de animación */
+    fill: #007BFF;
+    /* Color inicial del icono */
+    transition: fill 0.3s ease-in-out;
+    /* Transición de animación */
 }
 
 /* Cambiar el color del icono al pasar el ratón sobre el botón */
 .filter-button:hover .svg-icon {
-    fill: #FF5733; 
+    fill: #FF5733;
 }
 
 /* Estilos para el pop-up */
 .popup {
-    
-    opacity: 0; /* El pop-up estará inicialmente oculto */
-    pointer-events: none; /* No se puede hacer clic en elementos detrás del pop-up */
-    transition: opacity 0.3s ease-in-out; /* Transición de animación */
+
+    opacity: 0;
+    /* El pop-up estará inicialmente oculto */
+    pointer-events: none;
+    /* No se puede hacer clic en elementos detrás del pop-up */
+    transition: opacity 0.3s ease-in-out;
+    /* Transición de animación */
     position: absolute;
-    top: 60px; /* Alineado debajo del botón */
+    top: 60px;
+    /* Alineado debajo del botón */
     left: 10px;
     background-color: #fff;
     /* background: linear-gradient(to top, lightgrey 0%, lightgrey 1%, #e0e0e0 26%, #efefef 48%, #d9d9d9 75%, #bcbcbc 100%); */
@@ -153,14 +159,12 @@ img:hover {
     border-radius: 15px;
 }
 
-svg
-{
+svg {
     height: 30px !important;
 }
 
- /* Estilos para el botón de cierre */
-#popup .close-button 
-{
+/* Estilos para el botón de cierre */
+#popup .close-button {
     display: flex !important;
     justify-content: end;
     position: absolute !important;
@@ -170,19 +174,18 @@ svg
     border: none !important;
     font-size: 18px !important;
     cursor: pointer !important;
-    width: 35px !important  ;    
+    width: 35px !important;
 }
 
 
 
-.popup p
-{
+.popup p {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    
-    
-} 
+
+
+}
 
 .popup p button {
     display: flex;
@@ -193,15 +196,71 @@ svg
     background-color: rgb(255, 166, 0);
 }
 
-/* Clase para mostrar el pop-up */
 .show-popup {
     opacity: 1;
-    pointer-events: auto; /* Permite hacer clic en elementos detrás del pop-up */
+    pointer-events: auto;
     z-index: 999;
-    
+
 }
 
 
+
+/* Estilos para pupup2 */
+
+/* Estilos para el pop-up */
+.popup1 {
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+    position: absolute;
+    top: 65rem;
+    left: 10px;
+    background-color: #fff;
+    /* background: linear-gradient(to top, lightgrey 0%, lightgrey 1%, #e0e0e0 26%, #efefef 48%, #d9d9d9 75%, #bcbcbc 100%); */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    border-radius: 15px;
+}
+
+#popup1 .close-button {
+    display: flex !important;
+    justify-content: end;
+    position: absolute !important;
+    top: 1px !important;
+    right: 0px !important;
+    background: none !important;
+    border: none !important;
+    font-size: 18px !important;
+    cursor: pointer !important;
+    width: 35px !important;
+}
+
+
+
+.popup1 p {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+
+}
+
+.popup1 p button {
+    display: flex;
+    justify-content: center;
+    width: 40px;
+    margin-left: 30px;
+    height: 40px;
+    background-color: rgb(255, 166, 0);
+}
+
+.show-popup1 {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 999;
+
+}
 
 
 
@@ -237,19 +296,18 @@ button {
 }
 
 .logo:hover #mostrar {
-    transform: scale(1.1); 
-    animation: pulsacion 1s infinite; 
+    transform: scale(1.1);
+    animation: pulsacion 1s infinite;
 }
 
 .logo:hover #ocultar {
-    transform: scale(1.1); 
-    animation: pulsacion 1s infinite; 
+    transform: scale(1.1);
+    animation: pulsacion 1s infinite;
 }
 
 
 /*OJO CON ESTO DEBO ELIMINAR LA FUNCION DEL BOTON Y SU LOGICA CON DEMAS FUNCIONES */
-.botones #botonAplicar
-{
+.botones #botonAplicar {
     display: none;
 }
 
@@ -260,8 +318,7 @@ button:hover:not(:disabled) {
     cursor: pointer;
 }
 
-button:disabled
-{
+button:disabled {
     cursor: default;
 }
 
@@ -272,13 +329,20 @@ button:disabled
 } */
 
 
-.popup button
-{
+.popup button {
     background-color: #fff;
 }
 
-.popup button:hover
-{
+.popup button:hover {
+    background-color: #FF5733;
+    border: solid 1px #fff;
+}
+
+.popup1 button {
+    background-color: #fff;
+}
+
+.popup1 button:hover {
     background-color: #FF5733;
     border: solid 1px #fff;
 }
@@ -292,106 +356,96 @@ body {
     margin-left: 5px;
 }
 
-#filterFieldName
-{
+#filterFieldName {
     cursor: pointer;
     border-radius: 10px;
     border: none;
     padding: 5px;
 }
 
-#filterFieldName option
-{
+#filterFieldName option {
     background-color: rgb(229, 229, 229);
 
 }
 
 
-#filterType
-{
+#filterType {
     cursor: pointer;
     border-radius: 10px;
     border: none;
     padding: 5px;
-    
+
 }
 
-#filterType option
-{
+#filterType option {
     background-color: rgb(229, 229, 229);
 
 }
 
-#filterValue
-{
+#filterValue {
     cursor: pointer;
     border-radius: 10px;
     border: none;
     padding: 5px;
-    
+
 }
+
 /* ///////////////////////
 /////Second section//// 
 /////////////////////// */
-#filterFieldName1
-{
+#filterFieldName1 {
     cursor: pointer;
     border-radius: 10px;
     border: none;
     padding: 5px;
 }
 
-#filterFieldName1 option
-{
+#filterFieldName1 option {
     background-color: rgb(229, 229, 229);
 
 }
 
 
-#filterType1
-{
+#filterType1 {
     cursor: pointer;
     border-radius: 10px;
     border: none;
     padding: 5px;
-    
+
 }
 
-#filterType1 option
-{
+#filterType1 option {
     background-color: rgb(229, 229, 229);
 
 }
 
-#filterValue1
-{
+#filterValue1 {
     cursor: pointer;
     border-radius: 10px;
     border: none;
     padding: 5px;
-    
+
 }
+
 /* ///////////////////
 ////////////////////
 /////////////////// */
 
 
-.form-control-sm
-{
+.form-control-sm {
     margin-left: 50px;
     display: flex;
     flex-wrap: wrap;
     column-gap: 5px;
     row-gap: 5px;
-        
+
 }
-.botones
-{
+
+.botones {
     margin-left: 50px;
 }
 
-.logo #logoFilter
-{
+.logo #logoFilter {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -403,8 +457,7 @@ body {
 
 }
 
-.logo #logoFilter1
-{
+.logo #logoFilter1 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -418,49 +471,45 @@ body {
 
 
 
-.wrapper 
-{
-    position:relative;
+.wrapper {
+    position: relative;
     z-index: 1;
     display: inline-block;
     width: 98%;
     height: 780px;
 }
 
-.wrapper #myIframe
-{
+.wrapper #myIframe {
     width: 98%;
     height: 100%;
 }
 
-.hidelogo 
-{
+.hidelogo {
     position: absolute;
     width: 100%;
     height: 25px;
     background: #ffffff;
     right: 0px;
     bottom: 0px;
-    z-index:999;
+    z-index: 999;
     display: block;
     color: #000;
-    background: rgb(236,236,236);
-    background: linear-gradient(90deg, rgba(236,236,236,1) 0%, rgba(249,249,249,1) 100%);
+    background: rgb(236, 236, 236);
+    background: linear-gradient(90deg, rgba(236, 236, 236, 1) 0%, rgba(249, 249, 249, 1) 100%);
 }
 
-.hidelogo1 
-{
+.hidelogo1 {
     position: absolute;
     width: 100%;
     height: 25px;
     background: #ffffff;
     right: 0px;
     bottom: -16px;
-    z-index:999;
+    z-index: 999;
     display: block;
     color: #000;
-    background: rgb(236,236,236);
-    background: linear-gradient(90deg, rgba(236,236,236,1) 0%, rgba(249,249,249,1) 100%);
+    background: rgb(236, 236, 236);
+    background: linear-gradient(90deg, rgba(236, 236, 236, 1) 0%, rgba(249, 249, 249, 1) 100%);
 }
 
 #bottomParagraph {
@@ -474,7 +523,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index:1000; 
+    z-index: 1000;
     font-size: .9em;
     font-family: 'Courier New', Courier, monospace;
 }
@@ -501,7 +550,7 @@ body {
 
 @media screen and (max-width: 1280px) {
 
-        /* .wrapper 
+    /* .wrapper 
     {
         position:relative;
         z-index: 1;
@@ -524,38 +573,33 @@ body {
         font-size: 0.6rem;
     }
 
-    .wrapper
-    {
+    .wrapper {
         width: 2080px;
         height: auto;
 
     }
 
-    
-    .nav_menu
-    {
+
+    .nav_menu {
         display: grid;
-        grid-template-columns: 1fr 1fr ;
+        grid-template-columns: 1fr 1fr;
         /* justify-items: center;
         align-items: center; */
     }
 
-    .nav_menu .title p
-    {
+    .nav_menu .title p {
         margin-left: 20px;
-        white-space: nowrap;      
+        white-space: nowrap;
     }
 
-    .title p
-    {
-    display: flex;
-    justify-content: end;
-    align-items: end;
-    font-size: .7rem;
+    .title p {
+        display: flex;
+        justify-content: end;
+        align-items: end;
+        font-size: .7rem;
     }
 
-    .wrapper #myIframe
-    {
+    .wrapper #myIframe {
         width: 380px;
         height: 600px;
     }
@@ -566,14 +610,12 @@ body {
         font-size: 1.2rem;
     } */
 
-    #logoimage
-    {
+    #logoimage {
         width: 70px;
         height: 25px;
     }
 
-    .botones
-    {
+    .botones {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: 0fr 0fr;
@@ -581,26 +623,24 @@ body {
         margin: 1px;
     }
 
-    .botones .agregarFiltro,.limpiarFiltro
-    {
+    .botones .agregarFiltro,
+    .limpiarFiltro {
         margin-left: 90px;
 
     }
 
-    .botones .actualizar, #botonMostrarFiltros
-    {
+    .botones .actualizar,
+    #botonMostrarFiltros {
         margin-right: 90px;
 
     }
-    
-    .botones button
-    {
+
+    .botones button {
         width: 90px;
     }
 
 
-    .form-control-sm
-    {
+    .form-control-sm {
         display: flex;
         margin: 0;
         justify-content: center;
@@ -614,16 +654,14 @@ body {
         height: 82%;
     } */
 
-    #filtroContainer
-    {
+    #filtroContainer {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
     }
 
-    .logo #logoFilter
-    {
+    .logo #logoFilter {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -634,21 +672,20 @@ body {
         cursor: pointer;
     }
 
-    
-    
 
-    
+
+
+
 }
 
-@media screen and (max-width: 720px){
+@media screen and (max-width: 720px) {
 
 
-    .wrapper
-    {
+    .wrapper {
         width: 98%;
     }
-    .wrapper #myIframe
-    {
+
+    .wrapper #myIframe {
         width: 98%;
     }
 
@@ -656,36 +693,28 @@ body {
 }
 
 @media screen and (max-width: 844px) and (orientation: landscape) {
-    
-    body
-    {
+
+    body {
         font-size: 0.6rem;
-        
+
     }
 
-    .wrapper 
-    {
-        position:relative;
+    .wrapper {
+        position: relative;
         z-index: 1;
         display: inline-block;
         width: 100%;
         height: 380px;
     }
 
-    .wrapper #myIframe
-    {
+    .wrapper #myIframe {
         width: 98%;
         height: 100%;
-}
+    }
 
-    .botones button
-    {
+    .botones button {
         width: 90px;
     }
 
 
 }
-
-
-
-

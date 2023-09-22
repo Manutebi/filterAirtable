@@ -8,87 +8,174 @@
     <link id="favIcon" rel="shortcut icon" href="" type="image/x-icon">
 </head>
 <body>
-    <header> 
-        <nav class="nav_menu">
-            <div class="title">
-                <p id="title" ></p>
-            </div>
-            <div class="logo">
-                <a href="#contenidoDuplicado">
-                    <button id="mostrar" class="mostrar">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
-                            <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
-                            <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
-                        </svg>
+    <div id="Superior">
+
+    </div>
+    <section id="section1">
+        <header> 
+            <nav class="nav_menu">
+                <div class="title">
+                    <p id="title" ></p>
+                </div>
+                <div class="logo">
+                    <a href="#contenidoDuplicado">
+                        <button id="mostrar" class="mostrar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+                                <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+                                <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+                            </svg>
+                        </button>
+                    </a>
+                    <button id="ocultar" class="ocultarContenido">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-eye-slash-fill" viewBox="0 0 16 16">
+                        <path d="m10.79 12.912-1.614-1.615a3.5 3.5 0 0 1-4.474-4.474l-2.06-2.06C.938 6.278 0 8 0 8s3 5.5 8 5.5a7.029 7.029 0 0 0 2.79-.588zM5.21 3.088A7.028 7.028 0 0 1 8 2.5c5 0 8 5.5 8 5.5s-.939 1.721-2.641 3.238l-2.062-2.062a3.5 3.5 0 0 0-4.474-4.474L5.21 3.089z"/>
+                        <path d="M5.525 7.646a2.5 2.5 0 0 0 2.829 2.829l-2.83-2.829zm4.95.708-2.829-2.83a2.5 2.5 0 0 1 2.829 2.829zm3.171 6-12-12 .708-.708 12 12-.708.708z"/>
+                    </svg>
                     </button>
-                </a>
-                <button id="ocultar" class="ocultarContenido">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-eye-slash-fill" viewBox="0 0 16 16">
-                    <path d="m10.79 12.912-1.614-1.615a3.5 3.5 0 0 1-4.474-4.474l-2.06-2.06C.938 6.278 0 8 0 8s3 5.5 8 5.5a7.029 7.029 0 0 0 2.79-.588zM5.21 3.088A7.028 7.028 0 0 1 8 2.5c5 0 8 5.5 8 5.5s-.939 1.721-2.641 3.238l-2.062-2.062a3.5 3.5 0 0 0-4.474-4.474L5.21 3.089z"/>
-                    <path d="M5.525 7.646a2.5 2.5 0 0 0 2.829 2.829l-2.83-2.829zm4.95.708-2.829-2.83a2.5 2.5 0 0 1 2.829 2.829zm3.171 6-12-12 .708-.708 12 12-.708.708z"/>
-                </svg>
-                </button>
-                <img id="logoFilter" src="img/filtrar (3).png" alt="">
-                <img id="logoImage" src=""  alt="">
-            </div>
-        </nav>
-    </header>
-    <main>
-        <section id="miSeccion">
-            <nav class="nav_menu2">
-                <!-- lista de los campos -->
-                <div class="form-control-sm">
-                    <select class="" name="filterFieldName" id="filterFieldName">
-                        <option value="" disabled selected>Nombre del campo</option>                        
-                    </select>
-
-                    <select name="filterType" id="filterType">
-                        <option value="" disabled selected>Seleccione filtro</option>
-                        <option value="Contains">Contiene</option> 
-                        <option value="Equals">Es igual a</option> 
-                        <option value="Greater">Mayor que</option> 
-                        <option value="Less">Menor que</option> 
-                        <option value="NotContains">No contiene</option>
-                        <option value="NotEquals">No es igual a</option> 
-                        <option value="GreaterOrEqual">Mayor o igual que</option> 
-                        <option value="LessOrEqual">Menor o igual que</option>
-                        <option value="IsAnyOf">Es cualquiera de</option>
-                        <option value="IsNoneOf">Es ninguno de</option>
-                        <option value="HasAnyOf">Tiene cualquiera de</option>
-                        <option value="HasAllOf">Tiene todo de</option>
-                        <option value="Empty">Vacio</option>
-                        <option value="NotEmpty">No vacio</option>
-                    </select>
-                    <input type="text" id="filterValue" placeholder="Valor de filtro">
-                    <div id="filtroContainer">
-
-                    </div>
-                </div>
-                <div class="botones" >
-                    <button class="agregarFiltro" type="button" onclick="agregarFiltro()">Agregar filtro</button>
-                    <button type="button" id="botonAplicar" onclick="aplicarFiltros()" disabled>Aplicar filtro</button>
-                    <button class="actualizar" type="button"onclick="recargarIframe()">Actualizar</button>
-                    <button class="limpiarFiltro" type="button" onclick="limpiarFiltros()">Limpiar filtros</button>
-                    <button id="botonMostrarFiltros" type="button" onclick="mostrarFiltros()">Filtros</button>
-                </div>
-                <!-- Pop-up -->
-                <div class="popup" id="popup">
-                    <button class="close-button" onclick="cerrarPopup()">&#10006;</button>
+                    <img id="logoFilter" src="img/filtrar (3).png" alt="">
+                    <img id="logoImage" src=""  alt="">
                 </div>
             </nav>
-            <!-- Aqui se define URL base -->
-        </section>
-        <div class="wrapper">
-            <p id="bottomParagraph">© Copyrigth 2023 Todos los derechos reservados.  </p>
-            <div class="hidelogo">
-            </div>
-            <iframe id="myIframe" allowfullscreen ></iframe>
-        </div>
+        </header>
+        <main>
+            <section id="miSeccion">
+                <nav class="nav_menu2">
+                    <!-- lista de los campos -->
+                    <div class="form-control-sm">
+                        <select class="" name="filterFieldName" id="filterFieldName">
+                            <option value="" disabled selected>Nombre del campo</option>                        
+                        </select>
 
-        <iframe id="myIframe2" src="" style="width: 98%; height: 900; display: none;" frameborder="0"></iframe>
-    </main>
+                        <select name="filterType" id="filterType">
+                            <option value="" disabled selected>Seleccione filtro</option>
+                            <option value="Contains">Contiene</option> 
+                            <option value="Equals">Es igual a</option> 
+                            <option value="Greater">Mayor que</option> 
+                            <option value="Less">Menor que</option> 
+                            <option value="NotContains">No contiene</option>
+                            <option value="NotEquals">No es igual a</option> 
+                            <option value="GreaterOrEqual">Mayor o igual que</option> 
+                            <option value="LessOrEqual">Menor o igual que</option>
+                            <option value="IsAnyOf">Es cualquiera de</option>
+                            <option value="IsNoneOf">Es ninguno de</option>
+                            <option value="HasAnyOf">Tiene cualquiera de</option>
+                            <option value="HasAllOf">Tiene todo de</option>
+                            <option value="Empty">Vacio</option>
+                            <option value="NotEmpty">No vacio</option>
+                        </select>
+                        <input type="text" id="filterValue" placeholder="Valor de filtro">
+                        <div id="filtroContainer">
+
+                        </div>
+                    </div>
+                    <div class="botones" >
+                        <button class="agregarFiltro" type="button" onclick="agregarFiltro()">Agregar filtro</button>
+                        <button type="button" id="botonAplicar" onclick="aplicarFiltros()" disabled>Aplicar filtro</button>
+                        <button class="actualizar" type="button"onclick="recargarIframe()">Actualizar</button>
+                        <button class="limpiarFiltro" type="button" onclick="limpiarFiltros()">Limpiar filtros</button>
+                        <button id="botonMostrarFiltros" type="button" onclick="mostrarFiltros()">Filtros</button>
+                    </div>
+                    <!-- Pop-up -->
+                    <div class="popup" id="popup">
+                        <button class="close-button" onclick="cerrarPopup()">&#10006;</button>
+                    </div>
+                </nav>
+                <!-- Aqui se define URL base -->
+            </section>
+            <div class="wrapper">
+                <p id="bottomParagraph"></p>
+                <div class="hidelogo">
+                </div>
+                <iframe id="myIframe" allowfullscreen ></iframe>
+            </div>
+
+            <iframe id="myIframe2" src="" style="width: 98%; height: 900; display: none;" frameborder="0"></iframe>
+        </main>
+    </section>
     <br>
-    <!-- Contenedor para el contenido duplicado -->
+    <br>
+    <br>
+    <section id="section2">
+        <header> 
+            <nav class="nav_menu">
+                <div class="title">
+                    <p id="titleb" ></p>
+                </div>
+                <div class="logo">
+                    <a href="#contenidoDuplicado">
+                        <button id="mostrar2" class="mostrar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+                                <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+                                <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+                            </svg>
+                        </button>
+                    </a>
+                    <a href="#Superior">
+                        <button id="ocultar2" class="ocultarContenido">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-eye-slash-fill" viewBox="0 0 16 16">
+                                <path d="m10.79 12.912-1.614-1.615a3.5 3.5 0 0 1-4.474-4.474l-2.06-2.06C.938 6.278 0 8 0 8s3 5.5 8 5.5a7.029 7.029 0 0 0 2.79-.588zM5.21 3.088A7.028 7.028 0 0 1 8 2.5c5 0 8 5.5 8 5.5s-.939 1.721-2.641 3.238l-2.062-2.062a3.5 3.5 0 0 0-4.474-4.474L5.21 3.089z"/>
+                                <path d="M5.525 7.646a2.5 2.5 0 0 0 2.829 2.829l-2.83-2.829zm4.95.708-2.829-2.83a2.5 2.5 0 0 1 2.829 2.829zm3.171 6-12-12 .708-.708 12 12-.708.708z"/>
+                            </svg>
+                        </button>
+                    </a>
+                    <img id="logoFilter1" src="img/filtrar (3).png" alt="">
+                    <!-- <img id="logoImage" src=""  alt=""> -->
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section id="miSeccion1">
+                <nav class="nav_menu2">
+                    <!-- lista de los campos -->
+                    <div class="form-control-sm">
+                        <select class="" name="filterFieldName1" id="filterFieldName1">
+                            <option value="" disabled selected>Nombre del campo</option>                        
+                        </select>
+
+                        <select name="filterType1" id="filterType1">
+                            <option value="" disabled selected>Seleccione filtro</option>
+                            <option value="Contains">Contiene</option> 
+                            <option value="Equals">Es igual a</option> 
+                            <option value="Greater">Mayor que</option> 
+                            <option value="Less">Menor que</option> 
+                            <option value="NotContains">No contiene</option>
+                            <option value="NotEquals">No es igual a</option> 
+                            <option value="GreaterOrEqual">Mayor o igual que</option> 
+                            <option value="LessOrEqual">Menor o igual que</option>
+                            <option value="IsAnyOf">Es cualquiera de</option>
+                            <option value="IsNoneOf">Es ninguno de</option>
+                            <option value="HasAnyOf">Tiene cualquiera de</option>
+                            <option value="HasAllOf">Tiene todo de</option>
+                            <option value="Empty">Vacio</option>
+                            <option value="NotEmpty">No vacio</option>
+                        </select>
+                        <input type="text" id="filterValue1" placeholder="Valor de filtro">
+                        <div id="filtroContainer1">
+
+                        </div>
+                    </div>
+                    <div class="botones" >
+                        <button class="agregarFiltro" type="button" onclick="agregarFiltro1()">Agregar filtro</button>
+                        <button type="button" id="botonAplicar1" onclick="aplicarFiltros1()" style="display: none;" disabled>Aplicar filtro</button>
+                        <button class="actualizar" type="button"onclick="recargarIframe1()">Actualizar</button>
+                        <button class="limpiarFiltro" type="button" onclick="limpiarFiltros1()">Limpiar filtros</button>
+                        <button id="botonMostrarFiltros1" type="button" onclick="mostrarFiltros1()">Filtros</button>
+                    </div>
+                    <!-- Pop-up -->
+                    <div class="popup" id="popup1">
+                        <button class="close-button" onclick="cerrarPopup1()">&#10006;</button>
+                    </div>
+                </nav>
+                <!-- Aqui se define URL base -->
+            </section>
+            <div class="wrapper">
+                <p id="bottomParagraph"></p>
+                <div class="hidelogo1">
+                </div>
+                <iframe id="myIframe1" style="width: 98%; height: 800;" allowfullscreen ></iframe>
+            </div>
+        </main>
+    </section>
     <div id="contenidoDuplicado">
 
     </div>
@@ -96,30 +183,56 @@
 </body>
 <script>
     const urlParams = new URLSearchParams(window.location.search);
-    const select = document.getElementById('filterFieldName');
     const newBaseUrl = urlParams.get('baseUrl');
+    const newbaseUrlB = urlParams.get('baseUrlB');
 
     if (newBaseUrl) {
         const iframe = document.getElementById("myIframe");
         iframe.src = newBaseUrl;
+    }else{
+        const section1 = document.getElementById("section1");
+        section1.style.display = "none";
     }
 
+    if (newbaseUrlB) {
+        const iframe1 = document.getElementById("myIframe1");
+        iframe1.src = newbaseUrlB;
+    } else {
+        const section2 = document.getElementById("section2");
+        section2.style.display = "none";
+    }
+
+
     // Definir una funcion para agregar una opcion al select
-    function agregarOpcion(valor) {
+    function agregarOpcion(valor, selectElement) {
         const option = document.createElement('option');
         option.value = valor;
         option.textContent = valor;
-        select.appendChild(option);
+        selectElement.appendChild(option);
     }
 
-    // Obtener y agregar opciones para los 30 parámetros (c1, c2, ..., c30)
+    // Obtener y agregar opciones para los 30 parametros (c1, c2, ..., c30)
     for (let i = 1; i <= 30; i++) {
-        const paramName = 'c' + i;
-        const paramValue = urlParams.get(paramName);
-        if (paramValue) {
-            agregarOpcion(paramValue);
+        const paramNameC = 'c' + i;
+        const paramValueC = urlParams.get(paramNameC);
+        if (paramValueC) {
+
+            const filterFieldName = document.getElementById('filterFieldName');
+            agregarOpcion(paramValueC, filterFieldName);
         }
     }
+
+    // Obtener y agregar opciones para los 30 parametros (b1, b2, ..., b30)
+    for (let i = 1; i <= 30; i++) {
+        const paramNameB = 'b' + i;
+        const paramValueB = urlParams.get(paramNameB);
+        if (paramValueB) {
+            
+            const filterFieldName1 = document.getElementById('filterFieldName1');
+            agregarOpcion(paramValueB, filterFieldName1);
+        }
+    }
+
 
     //Obtener los parametros por URL Logo, titulo del documento y pagina
     const logo = urlParams.get('logo');
@@ -140,9 +253,6 @@
     const favicon = document.getElementById('favIcon');
     favicon.href = favIcon;
 
-    // const favIcon = urlParams.get('favicon');
-    // const favicon = document.getElementById('favIcon');
-    // favicon.innerHTML = favIcon;
 
     const bottomParagraph = urlParams.get('parrafoB') ||'' ; 
     const bottomP = document.getElementById('bottomParagraph');
@@ -151,6 +261,10 @@
     const paragraph = urlParams.get('parrafo');
     const title = document.getElementById('title');
     title.innerHTML = paragraph;
+
+    const paragraphb = urlParams.get('parrafob');
+    const titleb = document.getElementById('titleb')
+    titleb.innerHTML = paragraphb;
 
     //////////////////////////////////////////////
 
@@ -177,7 +291,34 @@
 
     // Actualiza el contador de filtros
     actualizarContadorFiltros();
-}
+    }
+
+
+    // Para iframe2
+    const condiciones1 = [];
+
+    function agregarFiltro1() {
+    const campo1 = document.getElementById("filterFieldName1").value;
+    const valor1 = document.getElementById("filterValue1").value;
+    const tipoDeFiltro1 = document.getElementById("filterType1").value;
+
+    if (campo1 && tipoDeFiltro1 && valor1) {
+        condiciones1.push({ campo1, tipoDeFiltro1, valor1 });
+        document.getElementById("filterFieldName1").value = "";
+        document.getElementById("filterValue1").value = "";
+        document.getElementById("filterType1").value = "";
+
+        // Habilita el botón "Aplicar filtro"
+        document.getElementById("botonAplicar1").disabled = false;
+    } else {
+        alert("Por favor, complete todos los campos para agregar un filtro.");
+    }
+
+    aplicarFiltros1();
+
+    // Actualiza el contador de filtros
+    actualizarContadorFiltros1();
+    }
 
 
     function eliminarFiltro(index) {
@@ -201,6 +342,28 @@
 
     }
 
+    // Para iframe2 
+    function eliminarFiltro1(index) {
+        condiciones1.splice(index, 1);
+        const filtroContainer1 = document.getElementById("filtroContainer1");
+        filtroContainer1.innerHTML = "";
+        aplicarFiltros1();
+
+        // Deshabilita el boton "Aplicar filtro" si no hay mas filtros
+        if (condiciones1.length === 0) {
+            document.getElementById("botonAplicar1").disabled = true;
+            cerrarPopup1();
+        }
+            
+
+
+        // Actualiza el contador de filtros
+        actualizarContadorFiltros1();
+        //Mostrar los filtros restantes
+        mostrarFiltros1();
+
+    }
+
     function mostrarFiltros() {
     // Crea un objeto que mapee los valores de las opciones a sus textos
     const opciones = {
@@ -219,7 +382,7 @@
         "Empty": "Vacio",   
         "NotEmpty": "No está vacio"
     };
-    
+
 
     const popup = document.getElementById("popup");
     let contenido = "<h4>Filtros Agregados:</h4>";
@@ -232,7 +395,41 @@
     contenido += '<button class="close-button" onclick="cerrarPopup()">✖</button>';
     popup.innerHTML = contenido;
 
-}
+    }
+
+    // Para iframe2
+    function mostrarFiltros1() {
+    // Crea un objeto que mapee los valores de las opciones a sus textos
+    const opciones1 = {
+        "Contains": "Contiene",
+        "Equals": "Es igual a",
+        "Greater": "Mayor que",
+        "Less": "Menor que",
+        "NotContains": "No contiene",
+        "NotEquals": "No es igual a",
+        "GreaterOrEqual": "Mayor o igual que",
+        "LessOrEqual": "Menor o igual que",
+        "IsAnyOf": "Es cualquiera de",
+        "IsNoneOf": "No es ninguno de",
+        "HasAnyOf": "Tiene cualquiera de",
+        "HasAllOf": "Tiene todos de",
+        "Empty": "Vacio",   
+        "NotEmpty": "No está vacio"
+    };
+
+
+    const popup1 = document.getElementById("popup1");
+    let contenido1 = "<h4>Filtros Agregados:</h4>";
+    for (let i = 0; i < condiciones.length; i++) {
+        const condicion1 = condiciones1[i];
+        // Obtiene el texto de la opción correspondiente al valor del filtro
+        const textoOpcion1 = opciones[condicion.tipoDeFiltro];
+        contenido += `<p>${condicion1.campo} ${textoOpcion1} ${condicion1.valor} <button onclick="eliminarFiltro(${i})"><svg id="fi_10516181" enable-background="new 0 0 28 28" viewBox="0 0 0 auto" xmlns="http://www.w3.org/2000/svg"><switch><foreignObject height="1" requiredExtensions="http://ns.adobe.com/AdobeIllustrator/10.0/" width="1"></foreignObject><g><path d="m18 26h-8c-2.2 0-4-1.8-4-4v-13c0-.6.4-1 1-1h14c.6 0 1 .4 1 1v13c0 2.2-1.8 4-4 4zm-10-16v12c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2v-12zm8 12c-.6 0-1-.4-1-1v-8c0-.6.4-1 1-1s1 .4 1 1v8c0 .6-.4 1-1 1zm-4 0c-.6 0-1-.4-1-1v-8c0-.6.4-1 1-1s1 .4 1 1v8c0 .6-.4 1-1 1zm10-16h-16c-.6 0-1-.4-1-1s.4-1 1-1h4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2h4c.6 0 1 .4 1 1s-.4 1-1 1zm-10-2h4z"></path></g></switch></svg></button></p>`;
+    }
+    contenido1 += '<button class="close-button" onclick="cerrarPopup()">✖</button>';
+    popup1.innerHTML = contenido1;
+
+    }
 
 
     function aplicarFiltros() {
@@ -250,9 +447,31 @@
         }
     }
 
+    // Para iframe 2
+    function aplicarFiltros1() {
+        if (newbaseUrlB) {
+            let iframeUrl = newbaseUrlB;
+            condiciones1.forEach((condicion1, index) => {
+                const { campo1, tipoDeFiltro1, valor1 } = condicion1;
+                const valorCodificado1 = encodeURIComponent(valor1);
+                iframeUrl += `&filter${tipoDeFiltro1}_${campo1}=${valorCodificado1}`;
+            });
+            const iframe = document.getElementById("myIframe1");
+            iframe.src = iframeUrl;
+        } else {
+            alert("Agregue una URL base antes de aplicar filtros.");
+        }
+    }
+
     function actualizarContadorFiltros() {
         const botonMostrarFiltros = document.getElementById("botonMostrarFiltros");
         botonMostrarFiltros.textContent = `Filtros (${condiciones.length})`;
+    }
+
+    // Para iframe 2
+    function actualizarContadorFiltros1() {
+        const botonMostrarFiltros1 = document.getElementById("botonMostrarFiltros1");
+        botonMostrarFiltros1.textContent = `Filtros (${condiciones1.length})`;
     }
 
     function limpiarFiltros() {
@@ -269,20 +488,43 @@
 
     }
 
-    // function recargarIframe() {
-    //     const iframe = document.getElementById("myIframe");
-    //     iframe.src = newBaseUrl;
-    // }
+    // Para iframe 2
+    function limpiarFiltros1() {
+        const filtroContainer1 = document.getElementById("filtroContainer1");
+        filtroContainer1.innerHTML = "";
+        condiciones1.length = 0;
+        const iframe = document.getElementById("myIframe1");
+        iframe.src = newbaseUrlB;
+        document.getElementById("filterFieldName1").value = "";
+        document.getElementById("filterValue1").value = "";
+        document.getElementById("filterType1").value = "";
+
+        actualizarContadorFiltros1();
+
+    }
+
 
     function recargarIframe() {
     const iframe = document.getElementById("myIframe");
     const iframeUrl = iframe.src; // Obtener la URL actual del iframe
     iframe.src = iframeUrl; // Establece la misma URL para recargar el iframe
-}
+    }
+
+    // Para iframe 2
+    function recargarIframe1() {
+    const iframe = document.getElementById("myIframe1");
+    const iframeUrl = iframe.src; // Obtener la URL actual del iframe
+    iframe.src = iframeUrl; // Establece la misma URL para recargar el iframe
+    }
 
 
     const filterButton = document.getElementById('botonMostrarFiltros');
     const popup = document.getElementById('popup');
+
+
+    // Para iframe 2 
+    const filterButton1 = document.getElementById('botonMostrarFiltros1');
+    const popup1 = document.getElementById('popup1');
 
 
     function togglePopup() {
@@ -295,9 +537,22 @@
 
     function cerrarPopup() {
     togglePopup();
-}
+    }
 
-    // Obtener la imagen y la sección por su ID
+    // Para iframe 2
+    function togglePopup1() {
+        popup1.classList.toggle('show-popup1');
+    }
+
+    filterButton1.addEventListener('click', () => {
+        togglePopup1();
+    });
+
+    function cerrarPopup1() {
+    togglePopup1();
+    }
+
+    // Obtener la imagen y la seccion por su ID
     const logoFilter = document.getElementById("logoFilter");
     const miSeccion = document.getElementById("miSeccion");
 
@@ -318,53 +573,48 @@
         seccionVisible = !seccionVisible;
     });
 
-    const iframe = document.getElementById("myIframe2");
-    const buttonMostrar = document.getElementById("mostrar");
-    const buttonOcultar = document.getElementById("ocultar");
+    // Para iframe 2
+    // Variable para llevar un registro de si la seccion está visible o no
+    let seccionVisible1 = true;
 
-    iframe.style.display = "none";
-    buttonOcultar.style.display = "none";
-
-    buttonMostrar.title = "Mostrar tabla"
-    buttonOcultar.title = "Ocultar tabla"
-
-    buttonMostrar.addEventListener("click", function() {
-        // Cuando se hace clic en el boton de mostrar, se muestra el iframe y el boton de ocultar
-        iframe.style.display = "block";
-        buttonOcultar.style.display = "block";
-        
-        // Ocultar boton mostrar
-        buttonMostrar.style.display = "none";
-    });
-
-    buttonOcultar.addEventListener("click", function() {
-        // Cuando se hace clic en el boton de ocultar, se oculta el iframe y el boton de ocultar
-        iframe.style.display = "none";
-        buttonOcultar.style.display = "none";
-        
-        // Mostrar el boton mostrar
-        buttonMostrar.style.display = "block";
-    });
-
-    // Se carga url de la ubicacion actual
-    window.onload = function() {
-    const iframe = document.getElementById("myIframe2");
-    iframe.src = window.location.href;
-}
-
-
-    iframe.addEventListener("load", function() {
-        const botonDentroDelIframe = iframe.contentWindow.document.getElementById("mostrar");
-        const parrafoDentroDelIframe = iframe.contentWindow.document.getElementById("bottomParagraph");
-
-        if (botonDentroDelIframe) {
-            botonDentroDelIframe.style.display = "none";
-        }
-        if(parrafoDentroDelIframe) {
-            parrafoDentroDelIframe.style.display = "none";
+    // Agregar un evento de click a la imagen
+    logoFilter1.addEventListener("click", function() {
+        if (seccionVisible1) {
+        // Si la seccion esta <visible, ocultar
+        miSeccion1.style.display = "none";
+        } else {
+        // Si la sección esta oculta, mostrar
+        miSeccion1.style.display = "block";
         }
 
+        // Cambia el valor de seccionVisible al valor opuesto
+        seccionVisible1 = !seccionVisible1;
     });
+
+
+    const eyes = document.getElementById("ocultar");
+    eyes.style.display = "none";
+
+    const eyes2 = document.getElementById("mostrar2");
+    eyes2.style.display = "none";
+
+    var botonMostrar = document.getElementById("mostrar");
+    var botonOcultar = document.getElementById("ocultar2");
+
+    botonMostrar.addEventListener("click", function() {
+    var seccion = document.getElementById("section2");
+    seccion.style.display = "block";
+    botonMostrar.style.display = "none";
+    botonOcultar.style.display = "block";
+    });
+
+    botonOcultar.addEventListener("click", function() {
+    var seccion = document.getElementById("section2");
+    seccion.style.display = "none";
+    botonOcultar.style.display = "none";
+    botonMostrar.style.display = "block";
+    });
+
 
 
 

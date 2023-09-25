@@ -15,14 +15,12 @@
                     <p id="title" ></p>
                 </div>
                 <div class="logo">
-                    <a href="#section2">
-                        <button id="mostrar" class="mostrar">
+                        <button id="mostrar" class="mostrar" style="display: none;" >
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
                                 <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
                                 <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
                             </svg>
                         </button>
-                    </a>
                     <button id="ocultar" class="ocultarContenido">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-eye-slash-fill" viewBox="0 0 16 16">
                         <path d="m10.79 12.912-1.614-1.615a3.5 3.5 0 0 1-4.474-4.474l-2.06-2.06C.938 6.278 0 8 0 8s3 5.5 8 5.5a7.029 7.029 0 0 0 2.79-.588zM5.21 3.088A7.028 7.028 0 0 1 8 2.5c5 0 8 5.5 8 5.5s-.939 1.721-2.641 3.238l-2.062-2.062a3.5 3.5 0 0 0-4.474-4.474L5.21 3.089z"/>
@@ -99,22 +97,18 @@
                     <p id="titleb" ></p>
                 </div>
                 <div class="logo">
-                    <a href="#section2">
-                        <button id="mostrar2" class="mostrar">
+                        <button id="mostrar1" class="mostrar" style="display: none;" >
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
                                 <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
                                 <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
                             </svg>
                         </button>
-                    </a>
-                    <a href="#section1">
-                        <button id="ocultar2" class="ocultarContenido">
+                        <button id="ocultar1" class="ocultarContenido">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-eye-slash-fill" viewBox="0 0 16 16">
                                 <path d="m10.79 12.912-1.614-1.615a3.5 3.5 0 0 1-4.474-4.474l-2.06-2.06C.938 6.278 0 8 0 8s3 5.5 8 5.5a7.029 7.029 0 0 0 2.79-.588zM5.21 3.088A7.028 7.028 0 0 1 8 2.5c5 0 8 5.5 8 5.5s-.939 1.721-2.641 3.238l-2.062-2.062a3.5 3.5 0 0 0-4.474-4.474L5.21 3.089z"/>
                                 <path d="M5.525 7.646a2.5 2.5 0 0 0 2.829 2.829l-2.83-2.829zm4.95.708-2.829-2.83a2.5 2.5 0 0 1 2.829 2.829zm3.171 6-12-12 .708-.708 12 12-.708.708z"/>
                             </svg>
                         </button>
-                    </a>
                     <img id="logoFilter1" src="img/filtrar (3).png" alt="">
                     <!-- <img id="logoImage" src=""  alt=""> -->
                 </div>
@@ -635,24 +629,51 @@
     // eyes2.style.display = "none";
 
     var botonMostrar = document.getElementById("mostrar");
-    var botonOcultar = document.getElementById("ocultar2");
+    var botonOcultar = document.getElementById("ocultar");
+    var seccion1 = document.getElementById("miSeccion");
+    var iframe1 = document.getElementById("myIframe");
+    var logoF = document.getElementById("logoFilter");
 
     botonMostrar.addEventListener("click", function() {
-    var seccion = document.getElementById("section2");
-    seccion.style.display = "block";
-    botonMostrar.style.display = "none";
-    botonOcultar.style.display = "block";
-    });
+        seccion1.style.display = "block";
+        iframe1.style.display = "block";
+        logoF.style.display = "block"
+        botonMostrar.style.display = "none";
+        botonOcultar.style.display = "block";
+    })
 
     botonOcultar.addEventListener("click", function() {
-    var seccion = document.getElementById("section2");
-    seccion.style.display = "none";
-    botonOcultar.style.display = "none";
-    botonMostrar.style.display = "block";
-    });
+        seccion1.style.display = "none";
+        iframe1.style.display = "none";
+        logoF.style.display = "none"
+        botonMostrar.style.display = "block";
+        botonOcultar.style.display = "none";
+    })
+
+    // Manipular DOM Seccion 2 
+
+    var botonMostrar1 = document.getElementById("mostrar1");
+    var botonOcultar1 = document.getElementById("ocultar1");
+    var seccion2 = document.getElementById("miSeccion1");
+    var iframe2 = document.getElementById("myIframe1");
+    var logoF1 = document.getElementById("logoFilter1");
+
+    botonMostrar1.addEventListener("click", function() {
+        seccion2.style.display = "block";
+        iframe2.style.display = "block";
+        logoF1.style.display = "block"
+        botonMostrar1.style.display = "none";
+        botonOcultar1.style.display = "block";
+    })
+
+    botonOcultar1.addEventListener("click", function() {
+        seccion2.style.display = "none";
+        iframe2.style.display = "none";
+        logoF1.style.display = "none"
+        botonMostrar1.style.display = "block";
+        botonOcultar1.style.display = "none";
+    })
 
 
-
-
-</script>
+</script>   
 </html>

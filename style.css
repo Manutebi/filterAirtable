@@ -44,6 +44,7 @@ html {
     display: flex;
 }
 
+
 #fullScreen {
     width: 50px;
     height: 50px;
@@ -305,6 +306,15 @@ button {
     animation: pulsacion 1s infinite;
 }
 
+.logo:hover #mostrar1 {
+    transform: scale(1.1);
+    animation: pulsacion 1s infinite;
+}
+
+.logo:hover #ocultar1 {
+    transform: scale(1.1);
+    animation: pulsacion 1s infinite;
+}
 
 /*OJO CON ESTO DEBO ELIMINAR LA FUNCION DEL BOTON Y SU LOGICA CON DEMAS FUNCIONES */
 .botones #botonAplicar {
@@ -504,12 +514,12 @@ body {
     height: 25px;
     background: #ffffff;
     right: 0px;
-    bottom: -16px;
+    bottom: -21px;
     z-index: 999;
     display: block;
     color: #000;
     background: rgb(236, 236, 236);
-    background: linear-gradient(90deg, rgba(236, 236, 236, 1) 0%, rgba(249, 249, 249, 1) 100%);
+    /* background: linear-gradient(90deg, rgba(236, 236, 236, 1) 0%, rgba(249, 249, 249, 1) 100%); */
 }
 
 #bottomParagraph {

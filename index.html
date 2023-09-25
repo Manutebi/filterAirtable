@@ -3,6 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="titleDocument" >Filtros</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link id="favIcon" rel="shortcut icon" href="" type="image/x-icon">
@@ -15,6 +16,11 @@
                     <p id="title" ></p>
                 </div>
                 <div class="logo">
+                        <button id="abajo" class="mostrar" style="display: none;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-1-circle-fill" viewBox="0 0 16 16">
+                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM9.283 4.002H7.971L6.072 5.385v1.271l1.834-1.318h.065V12h1.312V4.002Z"/>
+                            </svg>
+                        </button>
                         <button id="mostrar" class="mostrar" title="Mostrar tabla" style="display: none;" >
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
                                 <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
@@ -97,6 +103,11 @@
                     <p id="titleb" ></p>
                 </div>
                 <div class="logo">
+                        <button id="arriba" class="mostrar" style="display: none;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-2-circle-fill" viewBox="0 0 16 16">
+                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM6.646 6.24c0-.691.493-1.306 1.336-1.306.756 0 1.313.492 1.313 1.236 0 .697-.469 1.23-.902 1.705l-2.971 3.293V12h5.344v-1.107H7.268v-.077l1.974-2.22.096-.107c.688-.763 1.287-1.428 1.287-2.43 0-1.266-1.031-2.215-2.613-2.215-1.758 0-2.637 1.19-2.637 2.402v.065h1.271v-.07Z"/>
+                            </svg>
+                        </button>
                         <button id="mostrar1" class="mostrar" title="Mostrar tabla" style="display: none;" >
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
                                 <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
@@ -619,11 +630,13 @@
         seccionVisible1 = !seccionVisible1;
     });
 
+    // Ocultar botones 
     let botonMostrar = document.getElementById("mostrar");
     let botonOcultar = document.getElementById("ocultar");
     let seccion1 = document.getElementById("miSeccion");
     let iframe1 = document.getElementById("myIframe");
     let logoF = document.getElementById("logoFilter");
+    let sectionNone = document.getElementById("section1");
 
     botonMostrar.addEventListener("click", function() {
         seccion1.style.display = "block";
@@ -637,11 +650,15 @@
     })
 
     botonOcultar.addEventListener("click", function() {
+        if (sectionNone2.style.display !=="none"){
         seccion1.style.display = "none";
         iframe1.style.display = "none";
+        sectionNone.style.display="none";
         logoF.style.display = "none"
         botonMostrar.style.display = "block";
         botonOcultar.style.display = "none";
+        }
+        
     })
 
     // Manipular DOM Seccion 2 
@@ -651,6 +668,7 @@
     let seccion2 = document.getElementById("miSeccion1");
     let iframe2 = document.getElementById("myIframe1");
     let logoF1 = document.getElementById("logoFilter1");
+    let sectionNone2 = document.getElementById("section2");
 
     botonMostrar1.addEventListener("click", function() {
         seccion2.style.display = "block";
@@ -664,12 +682,42 @@
     })
 
     botonOcultar1.addEventListener("click", function() {
+        if (sectionNone.style.display !=="none" ){
+        sectionNone2.style.display = "none"
         seccion2.style.display = "none";
         iframe2.style.display = "none";
         logoF1.style.display = "none"
         botonMostrar1.style.display = "block";
         botonOcultar1.style.display = "none";
+        }
+        
     })
+
+    let arribaButton = document.getElementById("arriba");
+
+    document.getElementById("ocultar").addEventListener("click", function() {
+    arribaButton.style.display = "block";
+    arribaButton.addEventListener("click", function() {
+        document.getElementById("section1").style.display = "block";
+        iframe1.style.display = "block";
+        botonMostrar.style.display = "none"
+        botonOcultar.style.display = "block"
+
+    });
+});
+
+    let abajoButton = document.getElementById("abajo");
+
+    document.getElementById("ocultar1").addEventListener("click", function() {
+    abajoButton.style.display = "block";
+    abajoButton.addEventListener("click", function() {
+        document.getElementById("section2").style.display = "block";
+        iframe2.style.display = "block";
+        botonMostrar.style.display = "none"
+        botonOcultar.style.display = "block"
+
+    });
+});
 
 
 </script>   

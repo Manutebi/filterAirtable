@@ -1,4 +1,4 @@
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,13 +15,13 @@
                     <p id="title" ></p>
                 </div>
                 <div class="logo">
-                        <button id="mostrar" class="mostrar" style="display: none;" >
+                        <button id="mostrar" class="mostrar" title="Mostrar tabla" style="display: none;" >
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
                                 <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
                                 <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
                             </svg>
                         </button>
-                    <button id="ocultar" class="ocultarContenido">
+                    <button id="ocultar" class="ocultarContenido" title="Ocultar tabla" >
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-eye-slash-fill" viewBox="0 0 16 16">
                         <path d="m10.79 12.912-1.614-1.615a3.5 3.5 0 0 1-4.474-4.474l-2.06-2.06C.938 6.278 0 8 0 8s3 5.5 8 5.5a7.029 7.029 0 0 0 2.79-.588zM5.21 3.088A7.028 7.028 0 0 1 8 2.5c5 0 8 5.5 8 5.5s-.939 1.721-2.641 3.238l-2.062-2.062a3.5 3.5 0 0 0-4.474-4.474L5.21 3.089z"/>
                         <path d="M5.525 7.646a2.5 2.5 0 0 0 2.829 2.829l-2.83-2.829zm4.95.708-2.829-2.83a2.5 2.5 0 0 1 2.829 2.829zm3.171 6-12-12 .708-.708 12 12-.708.708z"/>
@@ -97,20 +97,19 @@
                     <p id="titleb" ></p>
                 </div>
                 <div class="logo">
-                        <button id="mostrar1" class="mostrar" style="display: none;" >
+                        <button id="mostrar1" class="mostrar" title="Mostrar tabla" style="display: none;" >
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
                                 <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
                                 <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
                             </svg>
                         </button>
-                        <button id="ocultar1" class="ocultarContenido">
+                        <button id="ocultar1" class="ocultarContenido" title="Ocultar tabla" >
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-eye-slash-fill" viewBox="0 0 16 16">
                                 <path d="m10.79 12.912-1.614-1.615a3.5 3.5 0 0 1-4.474-4.474l-2.06-2.06C.938 6.278 0 8 0 8s3 5.5 8 5.5a7.029 7.029 0 0 0 2.79-.588zM5.21 3.088A7.028 7.028 0 0 1 8 2.5c5 0 8 5.5 8 5.5s-.939 1.721-2.641 3.238l-2.062-2.062a3.5 3.5 0 0 0-4.474-4.474L5.21 3.089z"/>
                                 <path d="M5.525 7.646a2.5 2.5 0 0 0 2.829 2.829l-2.83-2.829zm4.95.708-2.829-2.83a2.5 2.5 0 0 1 2.829 2.829zm3.171 6-12-12 .708-.708 12 12-.708.708z"/>
                             </svg>
                         </button>
                     <img id="logoFilter1" src="img/filtrar (3).png" alt="">
-                    <!-- <img id="logoImage" src=""  alt=""> -->
                 </div>
             </nav>
         </header>
@@ -167,9 +166,6 @@
             </div>
         </main>
     </section>
-    <!-- <div id="contenidoDuplicado">
-
-    </div> -->
 
 </body>
 <script>
@@ -267,11 +263,13 @@
     if (filtersC === 'si') {
         sectionC.style.display = 'block';
         buttonC.style.display = 'block';
+    
     } 
     else if (filtersC === 'no') {
         sectionC.style.display = 'none';
         buttonC.style.display = 'none';
     }
+
 
     // Para ocultar filtros seccion B
     const filtersB = urlParams.get('filtersB');
@@ -621,23 +619,19 @@
         seccionVisible1 = !seccionVisible1;
     });
 
-
-    // const eyes = document.getElementById("ocultar");
-    // eyes.style.display = "none";
-
-    // const eyes2 = document.getElementById("mostrar2");
-    // eyes2.style.display = "none";
-
-    var botonMostrar = document.getElementById("mostrar");
-    var botonOcultar = document.getElementById("ocultar");
-    var seccion1 = document.getElementById("miSeccion");
-    var iframe1 = document.getElementById("myIframe");
-    var logoF = document.getElementById("logoFilter");
+    let botonMostrar = document.getElementById("mostrar");
+    let botonOcultar = document.getElementById("ocultar");
+    let seccion1 = document.getElementById("miSeccion");
+    let iframe1 = document.getElementById("myIframe");
+    let logoF = document.getElementById("logoFilter");
 
     botonMostrar.addEventListener("click", function() {
         seccion1.style.display = "block";
         iframe1.style.display = "block";
-        logoF.style.display = "block"
+        //Verifica si deben mostrar los filtros mediante la url 
+        if(filtersC==='si'){ 
+            logoF.style.display = "block"
+        }
         botonMostrar.style.display = "none";
         botonOcultar.style.display = "block";
     })
@@ -652,16 +646,19 @@
 
     // Manipular DOM Seccion 2 
 
-    var botonMostrar1 = document.getElementById("mostrar1");
-    var botonOcultar1 = document.getElementById("ocultar1");
-    var seccion2 = document.getElementById("miSeccion1");
-    var iframe2 = document.getElementById("myIframe1");
-    var logoF1 = document.getElementById("logoFilter1");
+    let botonMostrar1 = document.getElementById("mostrar1");
+    let botonOcultar1 = document.getElementById("ocultar1");
+    let seccion2 = document.getElementById("miSeccion1");
+    let iframe2 = document.getElementById("myIframe1");
+    let logoF1 = document.getElementById("logoFilter1");
 
     botonMostrar1.addEventListener("click", function() {
         seccion2.style.display = "block";
         iframe2.style.display = "block";
-        logoF1.style.display = "block"
+        //Verifica si deben mostrar los filtros mediante la url 
+        if(filtersB==='si'){ 
+            logoF1.style.display = "block"
+        }
         botonMostrar1.style.display = "none";
         botonOcultar1.style.display = "block";
     })

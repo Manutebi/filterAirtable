@@ -9,11 +9,19 @@
     <link id="favIcon" rel="shortcut icon" href="" type="image/x-icon">
 </head>
 <body>
-    <section id="section1">
-        <div id="active" class="active">
-            <div class="button-active" id="active1">1</div>
-            <div class="button-active" id="active2">2</div>
+    <div id="active" class="active">
+        <div class="button-active" id="active1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-1-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM9.283 4.002H7.971L6.072 5.385v1.271l1.834-1.318h.065V12h1.312V4.002Z"/>
+            </svg>
         </div>
+        <div class="button-active" id="active2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-2-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM6.646 6.24c0-.691.493-1.306 1.336-1.306.756 0 1.313.492 1.313 1.236 0 .697-.469 1.23-.902 1.705l-2.971 3.293V12h5.344v-1.107H7.268v-.077l1.974-2.22.096-.107c.688-.763 1.287-1.428 1.287-2.43 0-1.266-1.031-2.215-2.613-2.215-1.758 0-2.637 1.19-2.637 2.402v.065h1.271v-.07Z"/>
+            </svg>
+        </div>
+    </div>
+    <section id="section1">
         <header> 
             <nav class="nav_menu">
                 <div class="title">
@@ -26,7 +34,7 @@
                                 <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
                             </svg>
                         </button> -->
-                        <button id="mostrar" class="mostrar" title="Mostrar tabla" style="display: none;" >
+                        <!-- <button id="mostrar" class="mostrar" title="Mostrar tabla" style="display: none;" >
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
                                 <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
                                 <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
@@ -37,7 +45,7 @@
                         <path d="m10.79 12.912-1.614-1.615a3.5 3.5 0 0 1-4.474-4.474l-2.06-2.06C.938 6.278 0 8 0 8s3 5.5 8 5.5a7.029 7.029 0 0 0 2.79-.588zM5.21 3.088A7.028 7.028 0 0 1 8 2.5c5 0 8 5.5 8 5.5s-.939 1.721-2.641 3.238l-2.062-2.062a3.5 3.5 0 0 0-4.474-4.474L5.21 3.089z"/>
                         <path d="M5.525 7.646a2.5 2.5 0 0 0 2.829 2.829l-2.83-2.829zm4.95.708-2.829-2.83a2.5 2.5 0 0 1 2.829 2.829zm3.171 6-12-12 .708-.708 12 12-.708.708z"/>
                     </svg>
-                    </button>
+                    </button> -->
                     <img id="logoFilter" src="img/filtrar (3).png" alt="">
                     <img id="logoImage" src=""  alt="">
                 </div>
@@ -114,7 +122,7 @@
                                 <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
                             </svg>
                         </button> -->
-                        <button id="mostrar1" class="mostrar" title="Mostrar tabla" style="display: none;" >
+                        <!-- <button id="mostrar1" class="mostrar" title="Mostrar tabla" style="display: none;" >
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
                                 <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
                                 <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
@@ -125,7 +133,7 @@
                                 <path d="m10.79 12.912-1.614-1.615a3.5 3.5 0 0 1-4.474-4.474l-2.06-2.06C.938 6.278 0 8 0 8s3 5.5 8 5.5a7.029 7.029 0 0 0 2.79-.588zM5.21 3.088A7.028 7.028 0 0 1 8 2.5c5 0 8 5.5 8 5.5s-.939 1.721-2.641 3.238l-2.062-2.062a3.5 3.5 0 0 0-4.474-4.474L5.21 3.089z"/>
                                 <path d="M5.525 7.646a2.5 2.5 0 0 0 2.829 2.829l-2.83-2.829zm4.95.708-2.829-2.83a2.5 2.5 0 0 1 2.829 2.829zm3.171 6-12-12 .708-.708 12 12-.708.708z"/>
                             </svg>
-                        </button>
+                        </button> -->
                     <img id="logoFilter1" src="img/filtrar (3).png" alt="">
                 </div>
             </nav>
@@ -636,73 +644,108 @@
     });
 
     // Ocultar botones 
-    const botonMostrar = document.getElementById("mostrar");
-    const botonOcultar = document.getElementById("ocultar");
-    const logoF = document.getElementById("logoFilter");
-    const sectionNone = document.getElementById("section1");
-    const botonMostrar1 = document.getElementById("mostrar1");
-    const botonOcultar1 = document.getElementById("ocultar1");
-    const logoF1 = document.getElementById("logoFilter1");
-    const sectionNone2 = document.getElementById("section2");
-    // const activo1 = document.getElementById("active1");
-    // const activo2 = document.getElementById("active2");
+    // const botonMostrar = document.getElementById("mostrar");
+    // const botonOcultar = document.getElementById("ocultar");
+    // const logoF = document.getElementById("logoFilter");
+    // const sectionNone = document.getElementById("section1");
+    // const botonMostrar1 = document.getElementById("mostrar1");
+    // const botonOcultar1 = document.getElementById("ocultar1");
+    // const logoF1 = document.getElementById("logoFilter1");
+    // const sectionNone2 = document.getElementById("section2");
+    // // const activo1 = document.getElementById("active1");
+    // // const activo2 = document.getElementById("active2");
 
-    botonMostrar.addEventListener("click", function() {
-        //Verifica si deben mostrar los filtros mediante la url 
-        if (filtersC === 'si') { 
-            logoF.style.display = "block";
-        } else {
-            logoF.style.display = "none";
-        }
+    // botonMostrar.addEventListener("click", function() {
+    //     //Verifica si deben mostrar los filtros mediante la url 
+    //     if (filtersC === 'si') { 
+    //         logoF.style.display = "block";
+    //     } else {
+    //         logoF.style.display = "none";
+    //     }
 
-        botonMostrar.style.display = "none";
-        sectionNone2.style.display = "block";
-        botonOcultar.style.display = "block";
-    });
+    //     botonMostrar.style.display = "none";
+    //     sectionNone2.style.display = "block";
+    //     botonOcultar.style.display = "block";
+    // });
 
-    botonOcultar.addEventListener("click", function() {
-        if (sectionNone2.style.display !== "none") {
-            sectionNone2.style.display = "none";
-            if(filtersC ==='si'){
-                logoF.style.display = "block";
-            }else{
-                logoF.style.display = "none"
-            }
-            // activo1.style.backgroundColor="aqua";
-            botonMostrar.style.display = "block";
-            botonOcultar.style.display = "none";
-        }
-    });
+    // botonOcultar.addEventListener("click", function() {
+    //     if (sectionNone2.style.display !== "none") {
+    //         sectionNone2.style.display = "none";
+    //         if(filtersC ==='si'){
+    //             logoF.style.display = "block";
+    //         }else{
+    //             logoF.style.display = "none"
+    //         }
+    //         // activo1.style.backgroundColor="aqua";
+    //         botonMostrar.style.display = "block";
+    //         botonOcultar.style.display = "none";
+    //     }
+    // });
 
-    // Manipular DOM Seccion 2 
+    // // Manipular DOM Seccion 2 
 
-    botonMostrar1.addEventListener("click", function() {
-        //Verifica si deben mostrar los filtros mediante la url 
-        if (filtersB === 'si') { 
-            logoF1.style.display = "block";
-        } else {
-            logoF1.style.display = "none";
-        }
+    // botonMostrar1.addEventListener("click", function() {
+    //     //Verifica si deben mostrar los filtros mediante la url 
+    //     if (filtersB === 'si') { 
+    //         logoF1.style.display = "block";
+    //     } else {
+    //         logoF1.style.display = "none";
+    //     }
 
         
-        botonMostrar1.style.display = "none";
-        sectionNone.style.display = "block"; 
-        botonOcultar1.style.display = "block";
-    });
+    //     botonMostrar1.style.display = "none";
+    //     sectionNone.style.display = "block"; 
+    //     botonOcultar1.style.display = "block";
+    // });
 
-    botonOcultar1.addEventListener("click", function() {
-        if (sectionNone.style.display !== "none") {
-            sectionNone.style.display = "none";
-            if(filtersB ==='si'){
-                logoF1.style.display = "block";
-            }else{
-                logoF1.style.display = "none";
-            }
-            // activo2.style.backgroundColor ="#0099ff";
-            botonMostrar1.style.display = "block";
-            botonOcultar1.style.display = "none";
-        }
-    });
+    // botonOcultar1.addEventListener("click", function() {
+    //     if (sectionNone.style.display !== "none") {
+    //         sectionNone.style.display = "none";
+    //         if(filtersB ==='si'){
+    //             logoF1.style.display = "block";
+    //         }else{
+    //             logoF1.style.display = "none";
+    //         }
+    //         // activo2.style.backgroundColor ="#0099ff";
+    //         botonMostrar1.style.display = "block";
+    //         botonOcultar1.style.display = "none";
+    //     }
+    // });
+
+    document.getElementById('active1').addEventListener('click', function() {
+    var section1 = document.getElementById('section1');
+    if (section1.style.display === 'none') {
+        section1.style.display = 'block';
+        this.style.backgroundColor = 'green';
+    } else {
+        section1.style.display = 'none';
+        this.style.backgroundColor = 'red';
+    }
+    checkSections();
+});
+
+document.getElementById('active2').addEventListener('click', function() {
+    var section2 = document.getElementById('section2');
+    if (section2.style.display === 'none') {
+        section2.style.display = 'block';
+        this.style.backgroundColor = 'green';
+    } else {
+        section2.style.display = 'none';
+        this.style.backgroundColor = 'red';
+    }
+    checkSections();
+});
+
+function checkSections() {
+    var section1 = document.getElementById('section1');
+    var section2 = document.getElementById('section2');
+    if (section1.style.display !== 'none' && section2.style.display !== 'none') {
+        document.getElementById('active1').style.backgroundColor = 'green';
+        document.getElementById('active2').style.backgroundColor = 'green';
+    }
+}
+
+
 
 </script>   
 </html>

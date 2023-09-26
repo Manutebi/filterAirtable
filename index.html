@@ -712,26 +712,35 @@
     //     }
     // });
 
+    if (newBaseUrl && newbaseUrlB) {
+        document.getElementById('active').style.visibility = 'visible';
+    } else {
+        document.getElementById('active').style.display = 'none';
+    }
+        
+
     document.getElementById('active1').addEventListener('click', function() {
     var section1 = document.getElementById('section1');
+    var svg1 = this.getElementsByTagName('svg')[0];
     if (section1.style.display === 'none') {
         section1.style.display = 'block';
-        this.style.backgroundColor = 'green';
+        svg1.style.fill = '#00FF40';
     } else {
         section1.style.display = 'none';
-        this.style.backgroundColor = 'red';
+        svg1.style.fill = 'red';
     }
     checkSections();
 });
 
 document.getElementById('active2').addEventListener('click', function() {
     var section2 = document.getElementById('section2');
+    var svg2 = this.getElementsByTagName('svg')[0];
     if (section2.style.display === 'none') {
         section2.style.display = 'block';
-        this.style.backgroundColor = 'green';
+        svg2.style.fill = '#00FF40';
     } else {
         section2.style.display = 'none';
-        this.style.backgroundColor = 'red';
+        svg2.style.fill = 'red';
     }
     checkSections();
 });
@@ -740,8 +749,8 @@ function checkSections() {
     var section1 = document.getElementById('section1');
     var section2 = document.getElementById('section2');
     if (section1.style.display !== 'none' && section2.style.display !== 'none') {
-        document.getElementById('active1').style.backgroundColor = 'green';
-        document.getElementById('active2').style.backgroundColor = 'green';
+        document.getElementById('active1').getElementsByTagName('svg')[0].style.fill = '##00FF40';
+        document.getElementById('active2').getElementsByTagName('svg')[0].style.fill = '##00FF40';
     }
 }
 

@@ -29,6 +29,8 @@ html {
     margin: .4rem;
     border-radius: 50%;
     cursor: pointer;
+    transform: scale(1.1);
+    animation: pulsacion 1s infinite;
 }
 
 

@@ -17,6 +17,10 @@ html {
     display: flex;
     justify-content: start;
     margin-left: 5rem;
+    align-items: flex-end;
+    background-color: #fff;
+    border-radius: 1rem;
+    width: 16rem;
 }
 
 .button-active{

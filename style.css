@@ -13,6 +13,23 @@ html {
 
 }
 
+.active{
+    display: flex;
+    justify-content: start;
+    margin-left: 5rem;
+}
+
+.button-active{
+    display: flex;
+    background-color: #fff;
+    width: 4rem;
+    height: 4rem;
+    justify-content: center;
+    align-items: center;
+    margin: .4rem;
+    border-radius: 10%;
+}
+
 
 .mostrar,
 .ocultarContenido {

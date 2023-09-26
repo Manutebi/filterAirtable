@@ -48,6 +48,7 @@
                         <path d="M5.525 7.646a2.5 2.5 0 0 0 2.829 2.829l-2.83-2.829zm4.95.708-2.829-2.83a2.5 2.5 0 0 1 2.829 2.829zm3.171 6-12-12 .708-.708 12 12-.708.708z"/>
                     </svg>
                     </button> -->
+                    <div id="down" class="down"><i class="fa-solid fa-circle-down fa-2xl"></i></div>
                     <img id="logoFilter" src="img/filtrar (3).png" alt="">
                     <img id="logoImage" src=""  alt="">
                 </div>
@@ -83,13 +84,16 @@
                         <div id="filtroContainer">
 
                         </div>
-                    </div>
-                    <div class="botones" >
+
                         <button class="agregarFiltro" type="button" onclick="agregarFiltro()">Agregar filtro <i class="fa-solid fa-plus fa-beat-fade fa-lg"></i></button>
-                        <button type="button" id="botonAplicar" onclick="aplicarFiltros()" disabled>Aplicar filtro</button>
+                        <button type="button" id="botonAplicar" onclick="aplicarFiltros()" style="display: none;" disabled>Aplicar filtro</button>
                         <button class="actualizar" type="button"onclick="recargarIframe()">Actualizar <i class="fa-solid fa-rotate-right  fa-lg"></i></button>
                         <button class="limpiarFiltro" type="button" onclick="limpiarFiltros()">Limpiar filtros <i class="fa-solid fa-broom  fa-lg"></i></button>
                         <button id="botonMostrarFiltros" type="button" onclick="mostrarFiltros()">Filtros <i class="fa-solid fa-bars-staggered fa-fade fa-lg"></i></button>
+
+                    </div>
+                    <div class="botones" >
+                       
                     </div>
                     <!-- //beat beat-fade bounce fade flip shake spin spin-reverse spin-pulse -->
                     <!-- Pop-up -->
@@ -171,13 +175,16 @@
                         <div id="filtroContainer1">
 
                         </div>
-                    </div>
-                    <div class="botones" >
+
                         <button class="agregarFiltro" type="button" onclick="agregarFiltro1()">Agregar filtro  <i class="fa-solid fa-plus fa-beat-fade fa-lg"></i></button>
                         <button type="button" id="botonAplicar1" onclick="aplicarFiltros1()" style="display: none;" disabled>Aplicar filtro</button>
                         <button class="actualizar" type="button"onclick="recargarIframe1()">Actualizar <i class="fa-solid fa-rotate-right  fa-lg"></i></button>
                         <button class="limpiarFiltro" type="button" onclick="limpiarFiltros1()">Limpiar filtros <i class="fa-solid fa-broom  fa-lg"></i></button>
                         <button id="botonMostrarFiltros1" type="button" onclick="mostrarFiltros1()">Filtros <i class="fa-solid fa-bars-staggered fa-fade fa-lg"></i></button>
+
+                    </div>
+                    <div class="botones" >
+                        
                     </div>
                     <!-- Pop-up -->
                     <div class="popup1" id="popup1">
@@ -193,6 +200,7 @@
                 <iframe id="myIframe1" style="width: 98%; height: 800;" allowfullscreen ></iframe>
             </div>
         </main>
+        <div id="up" class="up"><i class="fa-solid fa-circle-arrow-up fa-lg"></i></div>
     </section>
 
 </body>
@@ -719,9 +727,23 @@
         document.getElementById('active').style.visibility = 'visible';
         document.getElementById('active1').getElementsByTagName('svg')[0].style.fill = '#00FF40';
         document.getElementById('active2').getElementsByTagName('svg')[0].style.fill = '#00FF40';
+        document.getElementById('down').style.display ='block';
     } else {
         document.getElementById('active').style.display = 'none';
+        document.getElementById('down').style.display ='none';
     }
+
+    document.getElementById("down").addEventListener("click", function() {
+    var element = document.getElementById("section2"); 
+    element.scrollIntoView({behavior: "smooth"});
+});
+
+document.getElementById("up").addEventListener("click", function() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+});
+
+
+    
         
 
     document.getElementById('active1').addEventListener('click', function() {

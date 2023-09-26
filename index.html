@@ -714,6 +714,8 @@
 
     if (newBaseUrl && newbaseUrlB) {
         document.getElementById('active').style.visibility = 'visible';
+        document.getElementById('active1').getElementsByTagName('svg')[0].style.fill = '#00FF40';
+        document.getElementById('active2').getElementsByTagName('svg')[0].style.fill = '#00FF40';
     } else {
         document.getElementById('active').style.display = 'none';
     }
@@ -732,7 +734,7 @@
     checkSections();
 });
 
-document.getElementById('active2').addEventListener('click', function() {
+    document.getElementById('active2').addEventListener('click', function() {
     var section2 = document.getElementById('section2');
     var svg2 = this.getElementsByTagName('svg')[0];
     if (section2.style.display === 'none') {

@@ -796,6 +796,41 @@ function checkSections() {
     }
 }
 
+dragElement(document.getElementById("popup"));
+
+function dragElement(elmnt) {
+    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+    elmnt.onmousedown = dragMouseDown;
+
+    function dragMouseDown(e) {
+        e = e || window.event;
+        // obtén la posición del cursor al inicio:
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        document.onmouseup = closeDragElement;
+        // llama a la función cada vez que el cursor se mueve:
+        document.onmousemove = elementDrag;
+    }
+
+    function elementDrag(e) {
+        e = e || window.event;
+        // calcula la nueva posición del cursor:
+        pos1 = pos3 - e.clientX;
+        pos2 = pos4 - e.clientY;
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        // establece la nueva posición del elemento:
+        elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+        elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+    }
+
+    function closeDragElement() {
+        // detén el movimiento cuando se suelta el botón del mouse:
+        document.onmouseup = null;
+        document.onmousemove = null;
+    }
+    }
+
 
 
 </script>   

@@ -804,6 +804,7 @@ function dragElement(elmnt) {
 
     function dragMouseDown(e) {
         e = e || window.event;
+        e.preventDefault(); // Previene la selección de texto
         // obtén la posición del cursor al inicio:
         pos3 = e.clientX;
         pos4 = e.clientY;

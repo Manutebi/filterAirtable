@@ -1,0 +1,208 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="titleDocument" >Tablas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <link id="favIcon" rel="shortcut icon" href="" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/2bf03bc6e0.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="nav-main">
+        <div class="container-header">
+            <div class="custom-select">
+                <span class="selected"><i class="fa-solid fa-rectangle-list"></i>  Tablas</span>
+                    <ul class="options">
+                        <li>Tabla 1</li>
+                        <li>Tabla 2</li>
+                        <li>Tabla 3</li>
+                        <li>Tabla 4</li>
+                        <li>Tabla 5</li>
+                        <li>Tabla 6</li>
+                        <li>Tabla 7</li>
+                        <li>Tabla 8</li>
+                        <li>Tabla 9</li>
+                        <li>Tabla 10</li>
+                        <li>Tabla 11</li>
+                        <li>Tabla 12</li>
+                        <li>Tabla 13</li>
+                        <li>Tabla 14</li>
+                    </ul>
+            </div>
+            
+            <div class="loguito">
+                <img id="logoImage" src=""  alt="">
+            </div>
+        </div>
+    </nav>
+    <div class="container-grid">
+        <section id="section1">
+            <header> 
+                <nav class="nav_menu">
+                    <div class="title">
+                        <p id="title" ></p>
+                    </div>
+                    <div class="logo">
+                        <img id="logoFilter" src="img/filtrar (3).png" alt="">
+                        <div id="down" class="down"><i class="fa-solid fa-circle-down fa-2xl"></i></div>
+                    </div>
+                </nav>
+            </header>
+            <main>
+                <section id="miSeccion">
+                    
+                </section>
+                <div class="wrapper">
+                    <p id="bottomParagraph"></p>
+                    <div class="hidelogo">
+                    </div>
+                    <iframe id="myIframe1" style="width: 98%; height: 800;" allowfullscreen ></iframe>
+                </div>
+            </main>
+    </section>
+
+    <section id="section2">
+        <header> 
+            <nav class="nav_menu">
+                <div class="title">
+                    <p id="titleb" ></p>
+                </div>
+                <div class="logo">
+                    <img id="logoFilter1" src="img/filtrar (3).png" alt="">
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section id="miSeccion1">
+
+                    <div class="botones" >
+                        
+                    </div>
+                    <!-- Pop-up -->
+                    <div class="popup1" id="popup1">
+                        <button class="close-button" onclick="cerrarPopup1()">&#10006;</button>
+                    </div>
+                </nav>
+            </section>
+            <div class="wrapper">
+                <p id="bottomParagraph"></p>
+                <div class="hidelogo1">
+                </div>
+                <iframe id="myIframe2" style="width: 98%; height: 800;" allowfullscreen ></iframe>
+            </div>
+        </main>
+        <div id="up" class="up"><i class="fa-solid fa-circle-up fa-xl"></i></div>
+    </section>
+    <section id="section3">
+        <header> 
+            <nav class="nav_menu">
+                <div class="title">
+                    <p id="titlec" ></p>
+                </div>
+                <div class="logo">
+                    <img id="logoFilter2" src="img/filtrar (3).png" alt="">
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section id="miSeccion2">
+            </section>
+            <div class="wrapper">
+                <p id="bottomParagraph"></p>
+                <div class="hidelogo2">
+                </div>
+                <iframe id="myIframe3" style="width: 98%; height: 800;" allowfullscreen ></iframe>
+            </div>
+        </main>
+        <div id="up" class="up"><i class="fa-solid fa-circle-up fa-xl"></i></div>
+    </section>
+
+    </div>
+    
+
+</body>
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const baseUrls = ['A', 'B', 'C', 'D', 'E',
+    'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N'].map(letter => urlParams.get('baseUrl' + letter));
+
+    baseUrls.forEach((baseUrl, index) => {
+        if (baseUrl) {
+            const iframe = document.getElementById("myIframe" + (index + 1));
+            iframe.src = baseUrl;
+        } else {
+            const section = document.getElementById("section" + (index + 1));
+            section.style.display = "none";
+        }
+    });
+
+
+
+
+    //Obtener los parametros por URL Logo, titulo del documento y pagina
+    const logo = urlParams.get('logo');
+    const logoImage = document.getElementById('logoImage');
+    logoImage.src = logo;
+
+    if (logo){
+        logoImage.src = logo;
+    }else{
+        logoImage.src = '/img/Benergy logo bueno.png'
+    }
+
+    const titleD = urlParams.get('title');
+    const titleDocument = document.getElementById('titleDocument');
+    titleDocument.innerHTML = titleD;
+
+    const favIcon = urlParams.get('favicon');
+    const favicon = document.getElementById('favIcon');
+    favicon.href = favIcon;
+
+
+    const bottomParagraph = urlParams.get('parrafoB') ||'' ; 
+    const bottomP = document.getElementById('bottomParagraph');
+    bottomP.innerHTML = bottomParagraph;
+
+    const paragraph = urlParams.get('parrafo');
+    const title = document.getElementById('title');
+    title.innerHTML = paragraph;
+
+    const paragraphb = urlParams.get('parrafob');
+    const titleb = document.getElementById('titleb')
+    titleb.innerHTML = paragraphb;
+
+    const paragraphc = urlParams.get('parrafoc');
+    const titlec = document.getElementById('titlec')
+    titlec.innerHTML = paragraphc;
+
+    document.querySelector('.selected').addEventListener('click', function(e) {
+    document.querySelector('.options').style.display = 'block';
+    e.stopPropagation();
+    });
+
+    document.querySelectorAll('.options li').forEach(function(el) {
+    el.addEventListener('click', function(e) {
+        document.querySelector('.selected').innerText = this.innerText;
+        document.querySelector('.options').style.display = 'none';
+        e.stopPropagation();
+    });
+    });
+
+    document.addEventListener('click', function() {
+    document.querySelector('.options').style.display = 'none';
+    });
+
+
+
+
+    
+
+
+
+</script>   
+</html>
+
+
